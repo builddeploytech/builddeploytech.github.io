@@ -1,43 +1,42 @@
-/* Reset & Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
 img { max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* Header */
-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: #fff; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-.logo { font-size: 1.8rem; font-weight: 700; }
-.nav-links { list-style: none; display: flex; gap: 2rem; }
+header { background: rgba(30, 41, 59, 0.95); backdrop-filter: blur(10px); color: #fff; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.2); }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; }
+.logo img { height: 50px; }
+.nav-links { list-style: none; display: flex; gap: 2.5rem; font-size: 1.1rem; }
 .nav-links a { transition: color 0.3s; }
 .nav-links a:hover { color: #3b82f6; }
-.mobile-menu { display: none; cursor: pointer; }
+.mobile-menu { display: none; font-size: 1.8rem; cursor: pointer; }
 
-/* Hero Section */
-.hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg') center/cover no-repeat; color: #fff; text-align: center; padding: 10rem 0 6rem; }
-.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-.hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; }
-.btn { display: inline-block; background: #3b82f6; color: #fff; padding: 1rem 2rem; border-radius: 50px; transition: 0.3s; }
+.hero { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('../images/hero-bg.jpg') center/cover no-repeat; color: #fff; text-align: center; padding: 12rem 0 8rem; }
+.hero h1 { font-size: 3.8rem; margin-bottom: 1.5rem; }
+.hero p { font-size: 1.3rem; max-width: 900px; margin: 0 auto 2.5rem; opacity: 0.95; }
+.btn { display: inline-block; background: #3b82f6; color: #fff; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 5px 15px rgba(59,130,246,0.4); }
 .btn:hover { background: #2563eb; transform: translateY(-5px); }
 
-/* Services Grid */
-.services { padding: 5rem 0; background: #fff; }
-.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-.card:hover { transform: translateY(-10px); }
-.card img { height: 200px; object-fit: cover; }
-.card-body { padding: 1.5rem; }
-.card h3 { margin-bottom: 1rem; }
+.services-section { padding: 6rem 0; background: #fff; }
+.section-title { text-align: center; font-size: 2.8rem; margin-bottom: 4rem; color: #1e293b; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+.card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s; }
+.card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.card img { height: 220px; object-fit: cover; }
+.card-body { padding: 2rem; text-align: center; }
+.card h3 { font-size: 1.6rem; margin-bottom: 1rem; }
 
-/* Footer */
-footer { background: #1e293b; color: #fff; text-align: center; padding: 3rem 0; }
+.service-detail { padding: 6rem 0; }
+.service-detail h1 { font-size: 3rem; text-align: center; margin-bottom: 2rem; }
+.service-detail ul { max-width: 800px; margin: 2rem auto; font-size: 1.2rem; line-height: 2; }
 
-/* Responsive */
+footer { background: #1e293b; color: #cbd5e1; text-align: center; padding: 4rem 0; font-size: 1.1rem; }
+
 @media (max-width: 768px) {
-    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #1e293b; padding: 1rem; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #1e293b; padding: 2rem; gap: 1.5rem; }
     .nav-links.active { display: flex; }
     .mobile-menu { display: block; }
-    .hero h1 { font-size: 2.5rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero { padding: 10rem 0 6rem; }
 }
