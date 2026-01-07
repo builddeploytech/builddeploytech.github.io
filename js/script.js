@@ -5,10 +5,12 @@ document.querySelector('.mobile-menu').addEventListener('click', () => {
 
 // Dark Mode Toggle
 const toggle = document.getElementById('dark-toggle');
-toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-});
+if (toggle) {
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+}
 
 // Load Dark Mode Preference
 if (localStorage.getItem('darkMode') === 'true') {
