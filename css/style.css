@@ -1,1 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: #0b5ed7;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+}
+
+header span {
+  color: #ff9800;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.btn {
+  background: #ff9800;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.services {
+  background: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.grid div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.cta {
+  background: #0b5ed7;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.cta a {
+  color: #fff;
+  font-weight: bold;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
 
