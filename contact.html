@@ -6,14 +6,20 @@
     <meta name="description" content="Contact BuildDeploy Tech for web development, mobile app, DevOps, cloud, and SEO services in India. Free consultation available.">
     <meta name="keywords" content="contact digital agency india, web development inquiry, mobile app quote, devops consultation, seo services contact">
     <title>Contact Us | BuildDeploy Tech - Digital Agency India</title>
+    
+    <!-- Favicon - Ye line sahi hai, logo.png kaam karega -->
     <link rel="icon" href="images/logo.png" type="image/png">
+    
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="contact-page">
+
     <div id="header-placeholder"></div>
 
-    <section class="hero contact-hero">
+    <!-- Hero Section with Background Image -->
+    <section class="hero contact-hero" style="background-image: url('images/hero-bg.jpg');">
+        <div class="hero-overlay"></div> <!-- Dark overlay for better text visibility -->
         <div class="container">
             <h1 class="animate-fade">Get In Touch</h1>
             <p class="animate-fade delay-1">Ready to start your project? Let's discuss how we can help you grow your business online.</p>
@@ -21,6 +27,7 @@
         </div>
     </section>
 
+    <!-- Contact Form Section -->
     <section class="contact-section" id="contact-form">
         <div class="container">
             <div class="contact-grid">
@@ -49,11 +56,20 @@
 
     <div id="footer-placeholder"></div>
 
+    <!-- Header & Footer Load with Error Handling -->
     <script>
-        const path = '';
-        fetch(path + 'includes/header.html').then(r => r.text()).then(d => document.getElementById('header-placeholder').innerHTML = d);
-        fetch(path + 'includes/footer.html').then(r => r.text()).then(d => document.getElementById('footer-placeholder').innerHTML = d);
+        const path = ''; // Root folder mein hai sab
+        fetch(path + 'includes/header.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('header-placeholder').innerHTML = d)
+            .catch(err => console.error('Header load failed:', err));
+
+        fetch(path + 'includes/footer.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('footer-placeholder').innerHTML = d)
+            .catch(err => console.error('Footer load failed:', err));
     </script>
+
     <script src="js/script.js"></script>
 </body>
 </html>
