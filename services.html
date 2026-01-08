@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Our Services - Web Development, Mobile App Development, DevOps & Cloud, SEO Services by BuildDeploy Tech India.">
-    <meta name="keywords" content="services builddeploy tech, web development, mobile app development, devops cloud, seo services india">
-    <title>Our Services | BuildDeploy Tech</title>
+    <meta name="description" content="Our Services - Professional Web Development, Mobile App Development, DevOps & Cloud Solutions, and SEO Services by BuildDeploy Tech, a digital agency in India.">
+    <meta name="keywords" content="web development services india, mobile app development, devops cloud services, seo services india, digital agency services, custom software development">
+    <title>Our Services | BuildDeploy Tech - Digital Agency India</title>
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,17 +16,84 @@
     <section class="hero services-hero">
         <div class="container">
             <h1 class="animate-fade">Our Comprehensive Services</h1>
-            <p class="animate-fade delay-1">End-to-end digital solutions tailored to your business goals.</p>
-            <a href="contact.html" class="btn animate-fade delay-2">Get Started</a>
+            <p class="animate-fade delay-1">End-to-end digital solutions tailored to your business goals — from concept to launch and growth.</p>
+            <a href="contact.html" class="btn animate-fade delay-2">Get Started Today</a>
         </div>
     </section>
 
     <section class="services-section animate-section">
         <div class="container">
             <h2 class="section-title">Choose Your Service</h2>
+            <p class="section-subtitle animate-fade">We deliver excellence in every domain</p>
+
             <div class="grid">
-                <!-- Same 4 flip cards as index.html -->
-                <!-- Copy from index.html -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/web-dev.jpg" alt="Professional Website Development Services - Custom, Responsive, SEO-Optimized Websites" loading="lazy">
+                            <div class="card-body">
+                                <h3>Website Development</h3>
+                                <p>Custom, responsive, and high-performance websites built with modern frameworks like React, Next.js, and Vue.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Website Development</h3>
+                            <p>Full-stack solutions including e-commerce, CMS integration, PWA, and ongoing maintenance.</p>
+                            <a href="services/web-development.html" class="btn">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/mobile-app.jpg" alt="Mobile App Development - Native and Cross-Platform Apps for iOS and Android" loading="lazy">
+                            <div class="card-body">
+                                <h3>Mobile App Development</h3>
+                                <p>Engaging native and cross-platform apps that deliver seamless user experiences on iOS and Android.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Mobile Apps</h3>
+                            <p>React Native, Flutter, Swift, Kotlin — with UI/UX design, backend integration, and app store deployment.</p>
+                            <a href="services/app-development.html" class="btn">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/devops.jpg" alt="DevOps & Cloud Deployment Services - AWS, Azure, Docker, Kubernetes" loading="lazy">
+                            <div class="card-body">
+                                <h3>DevOps & Cloud</h3>
+                                <p>Scalable, secure, and automated cloud infrastructure for faster delivery and zero downtime.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>DevOps & Cloud</h3>
+                            <p>AWS, Azure, GCP, Docker, Kubernetes, CI/CD pipelines, Terraform, monitoring.</p>
+                            <a href="services/devops-cloud.html" class="btn">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/seo.jpg" alt="Result-Driven SEO Services - Improve Google Rankings and Organic Traffic" loading="lazy">
+                            <div class="card-body">
+                                <h3>SEO Services</h3>
+                                <p>Data-driven SEO strategies to boost your Google rankings and drive qualified organic traffic.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>SEO Services</h3>
+                            <p>Technical SEO, on-page optimization, keyword research, backlink building, local SEO, monthly reports.</p>
+                            <a href="services/seo-services.html" class="btn">View Details →</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -35,8 +102,15 @@
 
     <script>
         const path = '';
-        fetch(path + 'includes/header.html').then(r => r.text()).then(d => document.getElementById('header-placeholder').innerHTML = d);
-        fetch(path + 'includes/footer.html').then(r => r.text()).then(d => document.getElementById('footer-placeholder').innerHTML = d);
+        fetch(path + 'includes/header.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('header-placeholder').innerHTML = d)
+            .catch(err => console.error('Header load failed:', err));
+
+        fetch(path + 'includes/footer.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('footer-placeholder').innerHTML = d)
+            .catch(err => console.error('Footer load failed:', err));
     </script>
     <script src="js/script.js"></script>
 </body>
