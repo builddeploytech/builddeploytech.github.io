@@ -1,61 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional custom website development services - responsive, fast, SEO-optimized modern websites for businesses.">
-    <meta name="keywords" content="website development, custom web design, responsive website, web developer India">
-    <title>Website Development Services | BuildDeploy Tech</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Website Development Services | BuildDeploy Tech</title>
+  <meta
+    name="description"
+    content="BuildDeploy Tech provides professional website development services including responsive design, SEO-optimized websites, landing pages, CMS and e-commerce solutions."
+  />
+  <link rel="canonical" href="https://builddeploytech.github.io/services/web-development.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/logo.png" type="image/png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo"><img src="../images/logo.png" alt="BuildDeploy Tech Logo"></div>
-                <ul class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../services.html">Services</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
-                </ul>
-                <div class="mobile-menu">☰</div>
-                <span id="dark-toggle">🌙</span>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Professional Website Development</h1>
-            <p>We build modern, responsive, and high-performance websites that drive conversions and rank on Google.</p>
-            <a href="../contact.html" class="btn">Get Free Quote</a>
-        </div>
-    </section>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
 
-    <section class="service-detail">
-        <div class="container">
-            <h1>Why Choose Our Web Development?</h1>
-            <ul>
-                <li><strong>Custom Design & Development</strong> – Tailored to your brand.</li>
-                <li><strong>Fully Responsive & Mobile-First</strong> – Perfect on all devices.</li>
-                <li><strong>Fast Loading & Performance Optimized</strong> – 95+ PageSpeed score.</li>
-                <li><strong>SEO Best Practices</strong> – Built-in optimization.</li>
-                <li><strong>Secure & Scalable</strong> – Ready for growth.</li>
-            </ul>
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="../contact.html" class="btn">Discuss Your Project</a>
-            </div>
-        </div>
-    </section>
+  <!-- ================= HERO ================= -->
+  <section class="hero service-hero web-hero">
+    <div class="container">
+      <h1 class="animate-fade">Professional Website Development</h1>
+      <p class="animate-fade delay-1">
+        We build fast, secure, and conversion-focused websites that help
+        businesses grow online.
+      </p>
+      <a href="/contact.html" class="btn animate-fade delay-2">
+        Get Free Consultation
+      </a>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 BuildDeploy Tech. All Rights Reserved.</p>
-        </div>
-    </footer>
+  <!-- ================= SERVICE DETAILS ================= -->
+  <section class="service-detail">
+    <div class="container">
 
-    <script src="../js/script.js"></script>
+      <h2 class="section-title">Why Choose Our Web Development Services?</h2>
+
+      <div class="feature-list">
+
+        <div class="feature-item">
+          <h3>Custom Website Design</h3>
+          <p>
+            Tailor-made designs aligned with your brand identity,
+            target audience, and business goals.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>Responsive & Mobile-First</h3>
+          <p>
+            Websites optimized for all devices to ensure seamless user
+            experience across mobile, tablet, and desktop.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>SEO-Optimized Structure</h3>
+          <p>
+            Clean code, fast loading speed, and on-page SEO best practices
+            built-in from day one.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>High Performance & Security</h3>
+          <p>
+            Optimized performance, secure architecture, and scalable
+            infrastructure ready for future growth.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ================= TECH STACK ================= -->
+      <div class="tech-stack">
+        <h3>Technologies We Use</h3>
+        <div class="tech-logos">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
+          <span>Next.js</span>
+          <span>PHP</span>
+          <span>WordPress</span>
+          <span>Shopify</span>
+        </div>
+      </div>
+
+      <!-- ================= CTA ================= -->
+      <div class="cta-center">
+        <a href="/contact.html" class="btn large">
+          Discuss Your Website Project
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Dynamic Includes -->
+  <script>
+    fetch("/includes/header.html")
+      .then(r => r.text())
+      .then(d => (document.getElementById("header-placeholder").innerHTML = d));
+
+    fetch("/includes/footer.html")
+      .then(r => r.text())
+      .then(d => (document.getElementById("footer-placeholder").innerHTML = d));
+  </script>
+
+  <script src="/js/script.js"></script>
 </body>
 </html>
