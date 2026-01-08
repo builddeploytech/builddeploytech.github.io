@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>How to Deploy a Website on AWS EC2 (Step-by-Step) | BuildDeploy Tech</title>
+  <meta
+    name="description"
+    content="Learn how to deploy a website on AWS EC2 step by step. Complete guide covering EC2 setup, security groups, Nginx/Apache, domain setup and best practices."
+  />
+  <link
+    rel="canonical"
+    href="https://builddeploytech.github.io/Blogs/aws-ec2-deployment.html"
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/logo.png" type="image/png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- ================= BLOG HERO ================= -->
+  <section class="hero services-hero">
+    <div class="container">
+      <h1 class="animate-fade">
+        How to Deploy a Website on AWS EC2 (Step-by-Step Guide)
+      </h1>
+      <p class="animate-fade delay-1">
+        A beginner-friendly guide to deploy a production-ready website on
+        AWS EC2 with security and best practices.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= BLOG CONTENT ================= -->
+  <section class="service-detail">
+    <div class="container">
+
+      <h2 class="section-title">What is AWS EC2?</h2>
+      <p>
+        Amazon EC2 (Elastic Compute Cloud) is a scalable virtual server
+        provided by AWS that allows you to run applications and websites
+        in the cloud with full control.
+      </p>
+
+      <h2 class="section-title">Prerequisites</h2>
+      <ul>
+        <li>AWS account</li>
+        <li>Basic Linux commands</li>
+        <li>Website files (HTML/CSS/JS or backend app)</li>
+        <li>Domain name (optional)</li>
+      </ul>
+
+      <h2 class="section-title">Step-by-Step Deployment Guide</h2>
+
+      <h3>Step 1: Launch an EC2 Instance</h3>
+      <p>
+        Login to AWS Console → EC2 → Launch Instance.
+        Choose Ubuntu 22.04 LTS and a free-tier eligible instance type.
+      </p>
+
+      <h3>Step 2: Configure Key Pair & Security Group</h3>
+      <p>
+        Create a key pair for SSH access.  
+        Open ports:
+      </p>
+      <ul>
+        <li>22 – SSH</li>
+        <li>80 – HTTP</li>
+        <li>443 – HTTPS (optional)</li>
+      </ul>
+
+      <h3>Step 3: Connect to EC2</h3>
+      <p>
+        Use SSH to connect to your instance:
+      </p>
+      <pre>
+ssh -i key.pem ubuntu@your-ec2-public-ip
+      </pre>
+
+      <h3>Step 4: Install Web Server</h3>
+      <p>
+        Update packages and install Nginx or Apache:
+      </p>
+      <pre>
+sudo apt update
+sudo apt install nginx -y
+      </pre>
+
+      <h3>Step 5: Deploy Website Files</h3>
+      <p>
+        Upload your website files to:
+      </p>
+      <pre>
+/var/www/html
+      </pre>
+
+      <h3>Step 6: Verify Deployment</h3>
+      <p>
+        Open your EC2 public IP in browser.
+        Your website should be live 🎉
+      </p>
+
+      <h3>Step 7: (Optional) Domain & SSL</h3>
+      <p>
+        Connect your domain using DNS records and secure your site with
+        SSL using Certbot (Let’s Encrypt).
+      </p>
+
+      <h2 class="section-title">Best Practices</h2>
+      <ul>
+        <li>Use firewall & least privilege IAM</li>
+        <li>Enable automatic updates</li>
+        <li>Use HTTPS</li>
+        <li>Monitor server health</li>
+        <li>Backup regularly</li>
+      </ul>
+
+      <h2 class="section-title">Need Professional Help?</h2>
+      <p>
+        If you want a secure, scalable and automated AWS deployment with
+        CI/CD and monitoring, check our services:
+      </p>
+      <ul>
+        <li>
+          <a href="/services/devops-cloud.html">
+            DevOps & Cloud Services
+          </a>
+        </li>
+      </ul>
+
+      <div class="cta-center">
+        <a href="/contact.html" class="btn large">
+          Deploy My Website on AWS
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Dynamic Includes -->
+  <script>
+    fetch("/includes/header.html")
+      .then(r => r.text())
+      .then(d => (document.getElementById("header-placeholder").innerHTML = d));
+
+    fetch("/includes/footer.html")
+      .then(r => r.text())
+      .then(d => (document.getElementById("footer-placeholder").innerHTML = d));
+  </script>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
