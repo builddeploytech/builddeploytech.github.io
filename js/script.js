@@ -1,61 +1,113 @@
-// Function to initialize features after header/footer load
+/**
+ * BuildDeploy Tech – Global Site Script
+ * Handles:
+ * - Mobile menu
+ * - Dark mode (persistent)
+ * - Active navigation
+ * - Smooth scrolling
+ * - Works with dynamic header/footer (no hacks)
+ */
+
 function initSiteFeatures() {
-    // Mobile Menu Toggle
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
+  /* ===============================
+     Mobile Menu Toggle
+  =============================== */
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const navLinks = document.querySelector(".nav-links");
 
-    if (mobileMenu && navLinks) {
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            // Optional: Change hamburger to X
-            mobileMenu.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-        });
-    }
+  if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      mobileMenu.textContent = navLinks.classList.contains("active")
+        ? "✕"
+        : "☰";
+    });
+  }
 
-    // Dark Mode Toggle
-    const darkToggle = document.getElementById('dark-toggle');
+  /* ===============================
+     Dark Mode Toggle (Persistent)
+  =============================== */
+  const darkToggle = document.getElementById("dark-toggle");
+
+  const applyDarkMode = (enabled) => {
+    document.body.classList.toggle("dark-mode", enabled);
     if (darkToggle) {
-        darkToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDark);
-            // Change icon
-            darkToggle.textContent = isDark ? '☀️' : '🌙';
-        });
+      darkToggle.textContent = enabled ? "☀️" : "🌙";
     }
+  };
 
-    // Load saved dark mode
-    if (localStorage.getItem('darkMode') === 'true') {
-        document.body.classList.add('dark-mode');
-        if (darkToggle) darkToggle.textContent = '☀️';
+  // Load saved preference
+  const savedDarkMode = localStorage.getItem("darkMode") === "true";
+  applyDarkMode(savedDarkMode);
+
+  if (darkToggle) {
+    darkToggle.addEventListener("click", () => {
+      const isDark = !document.body.classList.contains("dark-mode");
+      applyDarkMode(isDark);
+      localStorage.setItem("darkMode", isDark);
+    });
+  }
+
+  /* ===============================
+     Active Navigation Highlight
+  =============================== */
+  const currentPath = window.location.pathname
+    .replace(/\/$/, "")
+    .split("/")
+    .pop() || "index.html";
+
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    const linkPath = link
+      .getAttribute("href")
+      .replace(/\/$/, "")
+      .split("/")
+      .pop();
+
+    if (linkPath === currentPath) {
+      link.classList.add("active");
     }
+  });
 
-    // Highlight active nav link
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        const href = link.getAttribute('href').split('/').pop();
-        if (href === currentPage) {
-            link.classList.add('active');
+  /* ===============================
+     Smooth Scroll (Anchors)
+  =============================== */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId.length > 1) {
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }
+      }
     });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
+  });
 }
 
-// Run after page load
-window.addEventListener('load', () => {
-    // Header/Footer load hone ke baad features init karo
-    setTimeout(initSiteFeatures, 300); // Safe delay for fetch complete
-});
+/* =====================================
+   Init after DOM + dynamic includes
+===================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  // Observe DOM changes (for header/footer loaded via fetch)
+  const observer = new MutationObserver(() => {
+    if (
+      document.querySelector(".nav-links") &&
+      document.querySelector(".mobile-menu")
+    ) {
+      initSiteFeatures();
+      observer.disconnect(); // run once only
+    }
+  });
 
-// Agar fetch fast hai to direct bhi call kar sakte hain
-// But timeout safe rahega
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
+  // Fallback (in case header is static)
+  initSiteFeatures();
+});
