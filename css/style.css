@@ -163,7 +163,8 @@ body.dark-mode .logo-text {
     z-index: 2;
 }
 .home-hero {
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/hero-bg.jpg') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+              url('../images/hero-bg.jpg') center/cover no-repeat fixed;
 }
 .about-hero {
     background: linear-gradient(rgba(59,130,246,0.1), rgba(139,92,246,0.1)), #f8fafc;
