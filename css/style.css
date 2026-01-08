@@ -285,3 +285,88 @@ body.dark-mode footer { background: #020617; }
     }
     .card { height: 420px; } /* Mobile pe thoda chhota */
 }
+/* Animations */
+.animate-fade {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+
+.animate-section {
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Page Specific Accents */
+.home-hero { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/hero-bg.jpg') center/cover no-repeat fixed; }
+.about-hero { background: linear-gradient(rgba(59,130,246,0.08), rgba(139,92,246,0.08)), #f8fafc; }
+.services-hero { background: linear-gradient(rgba(16,185,129,0.08), transparent); }
+.contact-hero { background: linear-gradient(rgba(245,158,11,0.08), transparent); }
+.web-hero { background: linear-gradient(rgba(59,130,246,0.12), transparent); }
+.app-hero { background: linear-gradient(rgba(16,185,129,0.12), transparent); }
+.devops-hero { background: linear-gradient(rgba(245,158,11,0.12), transparent); }
+.seo-hero { background: linear-gradient(rgba(236,72,153,0.12), transparent); }
+
+/* Feature List */
+.feature-list {
+    max-width: 800px;
+    margin: 3rem auto;
+    font-size: 1.2rem;
+    line-height: 2.2;
+}
+.feature-list li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+/* Tech Stack */
+.tech-stack {
+    margin: 4rem 0;
+    text-align: center;
+}
+.tech-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.tech-logos span {
+    background: #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #1e293b;
+}
+body.dark-mode .tech-logos span {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+/* CTA Center */
+.cta-center {
+    text-align: center;
+    margin: 4rem 0;
+}
+.btn.large {
+    padding: 1.4rem 3.5rem;
+    font-size: 1.3rem;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    background: #25D366;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.whatsapp-btn:hover {
+    background: #128C7E;
+}
