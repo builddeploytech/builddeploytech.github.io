@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Projects & Case Studies | BuildDeploy Tech</title>
+  <meta
+    name="description"
+    content="Explore real-world projects and case studies by BuildDeploy Tech including web development, mobile apps, DevOps automation and cloud deployments."
+  />
+  <link rel="canonical" href="https://builddeploytech.github.io/projects.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/logo.png" type="image/png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero services-hero">
+    <div class="container">
+      <h1 class="animate-fade">Our Projects & Case Studies</h1>
+      <p class="animate-fade delay-1">
+        Real-world projects showcasing our expertise in Web Development,
+        Mobile Apps, DevOps and Cloud solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="services-section">
+    <div class="container">
+
+      <h2 class="section-title">Featured Work</h2>
+      <p class="section-subtitle">
+        A glimpse of what we’ve built and deployed for clients and practice
+        projects.
+      </p>
+
+      <div class="grid">
+
+        <!-- Project 1 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/images/web-dev.jpg" alt="Business Website Project" />
+              <div class="card-body">
+                <h3>Business Website</h3>
+                <p>Responsive, SEO-optimized company website.</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>Business Website</h3>
+              <p>
+                Custom website built using HTML, CSS and JavaScript with
+                performance and SEO best practices.
+              </p>
+              <a href="/contact.html" class="btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/images/mobile-app.jpg" alt="Mobile App Project" />
+              <div class="card-body">
+                <h3>Mobile App</h3>
+                <p>Cross-platform Android & iOS application.</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>Mobile App</h3>
+              <p>
+                Flutter-based mobile app with backend integration and Play
+                Store deployment.
+              </p>
+              <a href="/contact.html" class="btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/images/devops.jpg" alt="DevOps Automation Project" />
+              <div class="card-body">
+                <h3>DevOps Automation</h3>
+                <p>CI/CD pipeline & cloud infrastructure.</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>DevOps Automation</h3>
+              <p>
+                CI/CD pipeline using GitHub Actions with AWS EC2 deployment
+                and monitoring.
+              </p>
+              <a href="/services/devops-cloud.html" class="btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/images/seo.jpg" alt="SEO Growth Project" />
+              <div class="card-body">
+                <h3>SEO Growth Project</h3>
+                <p>Organic traffic & Google ranking improvement.</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>SEO Growth</h3>
+              <p>
+                Technical SEO, on-page optimization and content strategy
+                focused on long-term growth.
+              </p>
+              <a href="/services/seo-services.html" class="btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="service-detail">
+    <div class="container">
+      <h2 class="section-title">Want to Build Something Similar?</h2>
+      <p class="section-subtitle">
+        Let’s discuss your idea and turn it into a successful digital
+        product.
+      </p>
+      <div class="cta-center">
+        <a href="/contact.html" class="btn large">
+          Start Your Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Dynamic Includes -->
+  <script>
+    fetch("/includes/header.html")
+      .then(r => r.text())
+      .then(d => (document.getElementById("header-placeholder").innerHTML = d));
+
+    fetch("/includes/footer.html")
+      .then(r => r.text())
+      .then(d => (document.getElementById("footer-placeholder").innerHTML = d));
+  </script>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
