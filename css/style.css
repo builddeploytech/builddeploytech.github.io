@@ -430,3 +430,58 @@ body.dark-mode .contact-form {
     transform: none;
   }
 }
+/* ===============================
+   GLOBAL LAYOUT FIX (IMPORTANT)
+=============================== */
+
+/* Header fixed offset */
+body {
+  padding-top: 90px;
+}
+
+/* Make sure sections don't overlap footer */
+.services-section,
+.service-detail,
+.about-section,
+.contact-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===============================
+   FOOTER FORCE VISIBILITY FIX
+=============================== */
+.site-footer {
+  position: relative !important;
+  z-index: 10 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin-top: 120px;
+}
+
+/* Prevent footer being hidden */
+body > footer,
+footer.site-footer {
+  clear: both;
+}
+
+/* Footer container spacing */
+.site-footer .container {
+  position: relative;
+  z-index: 11;
+}
+
+/* ===============================
+   MOBILE FIX
+=============================== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+
+  .site-footer {
+    margin-top: 80px;
+  }
+}
+
