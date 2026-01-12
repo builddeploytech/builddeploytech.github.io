@@ -1,20 +1,21 @@
-<header>
+<header class="site-header">
   <div class="container">
-    <nav>
+    <nav class="navbar">
+
       <!-- Logo -->
       <div class="logo">
-  <a href="/index.html" class="logo-wrap">
-    <img
-      src="/images/logo.png"
-      alt="BuildDeploy Tech Logo"
-      loading="lazy"
-    />
-    <span class="logo-text">BuildDeploy Tech</span>
-  </a>
-</div>
+        <a href="/index.html" class="logo-wrap">
+          <img
+            src="/images/logo.png"
+            alt="BuildDeploy Tech Logo"
+            loading="lazy"
+          />
+          <span class="logo-text">BuildDeploy Tech</span>
+        </a>
+      </div>
 
       <!-- Navigation -->
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="/index.html" class="nav-link">Home</a></li>
         <li><a href="/about.html" class="nav-link">About</a></li>
         <li><a href="/services.html" class="nav-link">Services</a></li>
@@ -22,9 +23,29 @@
         <li><a href="/contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <!-- Mobile & Dark Mode -->
-      <div class="mobile-menu" aria-label="Open Menu">☰</div>
-      <span id="dark-toggle" aria-label="Toggle Dark Mode">🌙</span>
+      <!-- Actions -->
+      <div class="nav-actions">
+        <!-- Dark / Light Toggle -->
+        <button
+          id="dark-toggle"
+          class="icon-btn"
+          aria-label="Toggle Dark Mode"
+          type="button"
+        >
+          🌙
+        </button>
+
+        <!-- Mobile Menu -->
+        <button
+          class="mobile-menu"
+          id="mobileMenuBtn"
+          aria-label="Open Menu"
+          type="button"
+        >
+          ☰
+        </button>
+      </div>
+
     </nav>
   </div>
 </header>
