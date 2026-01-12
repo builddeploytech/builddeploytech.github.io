@@ -5,7 +5,8 @@
  * - Dark mode (persistent)
  * - Active navigation
  * - Smooth scrolling
- * - Works with dynamic header/footer (no hacks)
+ * - Scroll animations
+ * - Works with dynamic header/footer
  */
 
 function initSiteFeatures() {
@@ -36,7 +37,6 @@ function initSiteFeatures() {
     }
   };
 
-  // Load saved preference
   const savedDarkMode = localStorage.getItem("darkMode") === "true";
   applyDarkMode(savedDarkMode);
 
@@ -51,10 +51,9 @@ function initSiteFeatures() {
   /* ===============================
      Active Navigation Highlight
   =============================== */
-  const currentPath = window.location.pathname
-    .replace(/\/$/, "")
-    .split("/")
-    .pop() || "index.html";
+  const currentPath =
+    window.location.pathname.replace(/\/$/, "").split("/").pop() ||
+    "index.html";
 
   document.querySelectorAll(".nav-links a").forEach((link) => {
     const linkPath = link
@@ -86,20 +85,43 @@ function initSiteFeatures() {
       }
     });
   });
+
+  /* ===============================
+     Scroll Animations (fade-up)
+  =============================== */
+  const animatedElements = document.querySelectorAll(".fade-up");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    animatedElements.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback for old browsers
+    animatedElements.forEach((el) => el.classList.add("show"));
+  }
 }
 
 /* =====================================
    Init after DOM + dynamic includes
 ===================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  // Observe DOM changes (for header/footer loaded via fetch)
   const observer = new MutationObserver(() => {
     if (
       document.querySelector(".nav-links") &&
       document.querySelector(".mobile-menu")
     ) {
       initSiteFeatures();
-      observer.disconnect(); // run once only
+      observer.disconnect();
     }
   });
 
@@ -108,6 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     subtree: true,
   });
 
-  // Fallback (in case header is static)
+  // Fallback
   initSiteFeatures();
 });
