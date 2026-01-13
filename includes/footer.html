@@ -1,97 +1,105 @@
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-
-      <!-- Brand -->
+<footer class="site-footer relative overflow-hidden bg-gradient-to-t from-gray-900/5 to-transparent dark:from-black/30 dark:to-transparent pt-20 pb-12">
+  <!-- Subtle background overlay for glass effect -->
+  <div class="absolute inset-0 backdrop-blur-xl bg-white/5 dark:bg-gray-950/30 border-t border-white/10 dark:border-gray-800/50"></div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
+      
+      <!-- Brand Column -->
       <div class="footer-col fade-up">
-        <div class="logo-footer">
-          <img
-            src="/images/logo.png"
-            alt="BuildDeploy Tech Logo - DevOps, Cloud & Web Development"
-            loading="lazy"
-          />
-          <p>
-            BuildDeploy Tech is a modern digital agency delivering
-            DevOps, Cloud, Web & Mobile App Development, SEO,
-            and Government Infrastructure solutions.
+        <div class="logo-footer flex flex-col items-start gap-6">
+          <a href="/index.html" class="flex items-center gap-3 group">
+            <img
+              src="/images/logo.png"
+              alt="BuildDeploy Tech – Premium DevOps, Cloud & Digital Agency Logo"
+              class="h-14 w-auto transition-transform duration-400 group-hover:scale-110 group-hover:rotate-3"
+              loading="lazy"
+            />
+            <span class="text-2xl font-extrabold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
+              BuildDeploy Tech
+            </span>
+          </a>
+          <p class="text-gray-700 dark:text-gray-300 opacity-90 leading-relaxed max-w-xs">
+            Premium agency delivering DevOps pipelines, AWS Cloud, modern Web & Mobile Apps, SEO mastery, and GeM Government tenders & infrastructure solutions.
           </p>
+          <p class="text-sm opacity-70 mt-4">Built in India 🇮🇳 with ❤️</p>
         </div>
       </div>
 
       <!-- Quick Links -->
-      <div class="footer-col fade-up">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/Blogs/index.html">Blog</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+      <div class="footer-col fade-up delay-100">
+        <h4 class="text-xl font-bold mb-6 text-gray-900 dark:text-white">Quick Links</h4>
+        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+          <li><a href="/index.html" class="hover:text-blue-500 dark:hover:text-blue-400 transition pl-2 border-l-2 border-transparent hover:border-blue-500">Home</a></li>
+          <li><a href="/about.html" class="hover:text-blue-500 dark:hover:text-blue-400 transition pl-2 border-l-2 border-transparent hover:border-blue-500">About Us</a></li>
+          <li><a href="/services.html" class="hover:text-blue-500 dark:hover:text-blue-400 transition pl-2 border-l-2 border-transparent hover:border-blue-500">Services</a></li>
+          <li><a href="/Blogs/index.html" class="hover:text-blue-500 dark:hover:text-blue-400 transition pl-2 border-l-2 border-transparent hover:border-blue-500">Blog</a></li>
+          <li><a href="/contact.html" class="hover:text-blue-500 dark:hover:text-blue-400 transition pl-2 border-l-2 border-transparent hover:border-blue-500">Contact</a></li>
         </ul>
       </div>
 
       <!-- Services -->
-      <div class="footer-col fade-up">
-        <h4>Our Services</h4>
-        <ul>
-          <li><a href="/services/web-development.html">Website Development</a></li>
-          <li><a href="/services/app-development.html">Mobile App Development</a></li>
-          <li><a href="/services/devops-cloud.html">DevOps & Cloud</a></li>
-          <li><a href="/services/seo-services.html">SEO Services</a></li>
-          <li>
-            <a href="/services/government-tenders.html">
-              Govt Tenders, JAM & Infrastructure
-            </a>
-          </li>
+      <div class="footer-col fade-up delay-200">
+        <h4 class="text-xl font-bold mb-6 text-gray-900 dark:text-white">Our Expertise</h4>
+        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+          <li><a href="/services/web-development.html" class="hover:text-indigo-500 dark:hover:text-indigo-400 transition pl-2 border-l-2 border-transparent hover:border-indigo-500">Website Development</a></li>
+          <li><a href="/services/app-development.html" class="hover:text-indigo-500 dark:hover:text-indigo-400 transition pl-2 border-l-2 border-transparent hover:border-indigo-500">Mobile App Development</a></li>
+          <li><a href="/services/devops-cloud.html" class="hover:text-cyan-500 dark:hover:text-cyan-400 transition pl-2 border-l-2 border-transparent hover:border-cyan-500">DevOps & Cloud</a></li>
+          <li><a href="/services/seo-services.html" class="hover:text-yellow-500 dark:hover:text-yellow-400 transition pl-2 border-l-2 border-transparent hover:border-yellow-500">SEO Services</a></li>
+          <li><a href="/services/government-tenders.html" class="hover:text-orange-500 dark:hover:text-orange-400 transition pl-2 border-l-2 border-transparent hover:border-orange-500">GeM Tenders & Infrastructure</a></li>
         </ul>
       </div>
 
-      <!-- Contact -->
-      <div class="footer-col fade-up">
-        <h4>Get in Touch</h4>
-        <p>
-          Email:
-          <a href="mailto:sarveshsingh.inc@gmail.com">
-            sarveshsingh.inc@gmail.com
-          </a>
-        </p>
-        <p>
-          WhatsApp:
-          <a
-            href="https://wa.me/919695842280"
-            target="_blank"
-            rel="noopener"
-            aria-label="Chat on WhatsApp"
-          >
-            +91 96958 42280
-          </a>
-        </p>
-
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/in/sarvesh-singh-24im/"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn Profile"
-          >
-            LinkedIn 💼
-          </a>
+      <!-- Contact & Social -->
+      <div class="footer-col fade-up delay-300">
+        <h4 class="text-xl font-bold mb-6 text-gray-900 dark:text-white">Get in Touch</h4>
+        <div class="space-y-4 text-gray-700 dark:text-gray-300">
+          <p class="flex items-center gap-3">
+            <span class="text-blue-500 text-xl">✉️</span>
+            <a href="mailto:sarveshsingh.inc@gmail.com" class="hover:text-blue-500 transition">sarveshsingh.inc@gmail.com</a>
+          </p>
+          <p class="flex items-center gap-3">
+            <span class="text-green-500 text-xl">💬</span>
+            <a 
+              href="https://wa.me/919695842280?text=Hi%20BuildDeploy%20Tech!" 
+              target="_blank" 
+              rel="noopener" 
+              aria-label="Chat with BuildDeploy Tech on WhatsApp"
+              class="hover:text-green-500 transition flex items-center gap-2 group"
+            >
+              +91 96958 42280
+              <span class="opacity-0 group-hover:opacity-100 transition">→</span>
+            </a>
+          </p>
+          <div class="social-links flex gap-5 mt-6">
+            <a 
+              href="https://www.linkedin.com/in/sarvesh-singh-24im/" 
+              target="_blank" 
+              rel="noopener" 
+              aria-label="Follow us on LinkedIn"
+              class="text-2xl hover:text-blue-600 dark:hover:text-blue-400 transition transform hover:scale-125"
+            >
+              💼
+            </a>
+            <!-- Add more if you have: GitHub, Twitter/X, etc. -->
+            <!-- <a href="#" class="text-2xl hover:text-gray-900 dark:hover:text-white transition transform hover:scale-125">🐙</a> -->
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom -->
-    <div class="footer-bottom">
+    <!-- Bottom Bar -->
+    <div class="footer-bottom mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-800/50 text-center text-sm opacity-80">
       <p>
-        &copy; <span id="year"></span> BuildDeploy Tech.
-        All Rights Reserved. | Built in India 🇮🇳
+        © <span id="year"></span> BuildDeploy Tech. All Rights Reserved. 
+        <span class="mx-2">|</span> 
+        Crafted with passion in Gurugram, India 🇮🇳
       </p>
     </div>
   </div>
 </footer>
 
 <script>
-  // Auto update year
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
+  // Dynamic year
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
