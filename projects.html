@@ -1,203 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
-  <title>Projects & Case Studies | BuildDeploy Tech</title>
-  <meta
-    name="description"
-    content="Explore real-world projects and case studies by BuildDeploy Tech including web development, mobile apps, DevOps automation, cloud deployments and infrastructure projects."
-  />
+  <!-- Enhanced SEO -->
+  <title>Projects & Case Studies | BuildDeploy Tech – Real-World DevOps, Web, Mobile & GeM Works</title>
+  <meta name="description" content="Explore our portfolio: modern websites, cross-platform mobile apps, AWS DevOps pipelines, SEO campaigns, and GeM government infrastructure projects delivered with excellence." />
+  <meta name="keywords" content="web development projects, mobile app case studies, DevOps portfolio, AWS deployment examples, GeM tenders projects, SEO success stories, infrastructure deployment India" />
   <link rel="canonical" href="https://builddeploytech.github.io/projects.html" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="/images/logo.png" type="image/png" />
-
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projects & Case Studies | BuildDeploy Tech" />
+  <meta property="og:description" content="Real results from our work in web, mobile, cloud, SEO, and government tenders." />
+  <meta property="og:image" content="/images/projects-hero.jpg" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="icon" href="/images/logo.png" type="image/png" />
 </head>
+<body class="projects-page bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-black text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-700">
 
-<body class="projects-page">
-
-  <!-- Header -->
   <div id="header-placeholder"></div>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero projects-hero fade-up">
-    <div class="container">
-      <h1 class="fade-up">Our Projects & Case Studies</h1>
-      <p class="fade-up delay-1">
-        Real-world projects showcasing our expertise in Web Development,
-        Mobile Apps, DevOps, Cloud and Infrastructure solutions.
-      </p>
+  <!-- ================= PREMIUM HERO ================= -->
+  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-indigo-900/30 to-blue-900/40 dark:from-purple-950/60 dark:via-indigo-950/50 dark:to-blue-950/60 mix-blend-multiply"></div>
+    <img 
+      src="/images/projects-hero.jpg" 
+      alt="Showcase of real-world digital and infrastructure projects background" 
+      class="absolute inset-0 w-full h-full object-cover scale-110 opacity-40 dark:opacity-30 transition-all duration-1000" 
+      loading="lazy"
+    />
+    <div class="relative z-10 container mx-auto px-6 text-center">
+      <div class="backdrop-blur-2xl bg-white/15 dark:bg-gray-900/25 border border-white/20 dark:border-gray-700/30 rounded-3xl p-10 md:p-16 shadow-2xl max-w-5xl mx-auto">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 animate-fade-up">
+          Our <span class="bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent">Projects</span> & Case Studies
+        </h1>
+        <p class="text-xl md:text-2xl mb-10 opacity-90 animate-fade-up delay-150 max-w-4xl mx-auto">
+          Real-world results: From high-performance websites and mobile apps to automated DevOps pipelines, cloud migrations, SEO wins, and GeM government deployments.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-up delay-300">
+          <a href="/contact.html" class="btn-primary px-10 py-5 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-400 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white">
+            Discuss Your Project →
+          </a>
+          <a href="https://wa.me/919695842280?text=Hi%20BuildDeploy%20Tech,%20I'd%20like%20to%20see%20more%20project%20details!" target="_blank" class="btn-whatsapp px-10 py-5 rounded-full text-lg font-semibold border-2 border-green-500 text-green-600 dark:text-green-400 hover:bg-green-600 hover:text-white transition-all duration-400 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+            <span class="text-2xl">💬</span> Ask on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ================= PROJECTS ================= -->
-  <section class="services-section">
-    <div class="container">
-
-      <h2 class="section-title fade-up">Featured Work</h2>
-      <p class="section-subtitle fade-up delay-1">
-        A glimpse of what we’ve built and deployed for clients and
-        real-world practice projects.
+  <!-- ================= FEATURED PROJECTS GRID ================= -->
+  <section class="py-20 md:py-32 relative">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 animate-fade-up">Featured Work</h2>
+      <p class="text-xl text-center mb-16 opacity-80 max-w-4xl mx-auto animate-fade-up delay-100">
+        A selection of projects that demonstrate our end-to-end capabilities — from concept to production and beyond.
       </p>
-
-      <div class="grid">
-
-        <!-- Project 1 -->
-        <div class="card fade-up">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="/images/web-dev.jpg" alt="Business Website Project" />
-              <div class="card-body">
-                <h3>Business Website</h3>
-                <p>Responsive, SEO-optimized company website.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:gap-12">
+        
+        <!-- Project 1: Business Website -->
+        <div class="card group perspective-1000 animate-fade-up">
+          <div class="card-inner relative h-[440px] transition-transform duration-800 transform-style-preserve-3d group-hover:rotate-y-180">
+            <div class="card-front absolute inset-0 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-900 to-black text-white backface-hidden">
+              <img src="/images/web-dev.jpg" alt="Responsive business website project showcase" class="w-full h-3/5 object-cover transform group-hover:scale-110 transition-transform duration-1000" loading="lazy" />
+              <div class="p-8 flex flex-col justify-center h-2/5">
+                <h3 class="text-2xl font-bold mb-3">Business Website</h3>
+                <p class="opacity-80">Modern corporate site with strong branding & conversions.</p>
               </div>
             </div>
-            <div class="card-back">
-              <h3>Business Website</h3>
-              <p>
-                Custom website built using HTML, CSS and JavaScript with
-                performance and SEO best practices.
-              </p>
-              <a href="/contact.html" class="btn">View Details →</a>
+            <div class="card-back absolute inset-0 rounded-3xl backdrop-blur-xl bg-white/10 dark:bg-gray-900/30 border border-white/20 flex flex-col items-center justify-center p-10 backface-hidden rotate-y-180">
+              <h3 class="text-3xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Business Website</h3>
+              <p class="text-center text-lg mb-8 max-w-xs">HTML5 • CSS3 • JavaScript • Responsive Design • SEO Optimization • Fast Load Times</p>
+              <a href="/contact.html" class="btn-primary px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">View Details →</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="card fade-up">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="/images/mobile-app.jpg" alt="Mobile App Project" />
-              <div class="card-body">
-                <h3>Mobile App</h3>
-                <p>Cross-platform Android & iOS application.</p>
+        <!-- Project 2: Mobile App -->
+        <div class="card group perspective-1000 animate-fade-up delay-100">
+          <div class="card-inner relative h-[440px] transition-transform duration-800 transform-style-preserve-3d group-hover:rotate-y-180">
+            <div class="card-front absolute inset-0 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-900 to-black text-white backface-hidden">
+              <img src="/images/mobile-app.jpg" alt="Cross-platform mobile application project" class="w-full h-3/5 object-cover transform group-hover:scale-110 transition-transform duration-1000" loading="lazy" />
+              <div class="p-8 flex flex-col justify-center h-2/5">
+                <h3 class="text-2xl font-bold mb-3">Cross-Platform Mobile App</h3>
+                <p class="opacity-80">User-centric app for iOS & Android.</p>
               </div>
             </div>
-            <div class="card-back">
-              <h3>Mobile App</h3>
-              <p>
-                Flutter-based mobile app with backend integration and
-                Play Store deployment.
-              </p>
-              <a href="/contact.html" class="btn">View Details →</a>
+            <div class="card-back absolute inset-0 rounded-3xl backdrop-blur-xl bg-white/10 dark:bg-gray-900/30 border border-white/20 flex flex-col items-center justify-center p-10 backface-hidden rotate-y-180">
+              <h3 class="text-3xl font-extrabold mb-6 bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent">Mobile App</h3>
+              <p class="text-center text-lg mb-8 max-w-xs">Flutter • Firebase Backend • Push Notifications • App Store & Play Store Deployment</p>
+              <a href="/contact.html" class="btn-primary px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">View Details →</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="card fade-up">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="/images/devops.jpg" alt="DevOps Automation Project" />
-              <div class="card-body">
-                <h3>DevOps Automation</h3>
-                <p>CI/CD pipeline & cloud infrastructure.</p>
+        <!-- Project 3: DevOps Automation -->
+        <div class="card group perspective-1000 animate-fade-up delay-200">
+          <div class="card-inner relative h-[440px] transition-transform duration-800 transform-style-preserve-3d group-hover:rotate-y-180">
+            <div class="card-front absolute inset-0 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-900 to-black text-white backface-hidden">
+              <img src="/images/devops.jpg" alt="CI/CD pipeline and AWS cloud deployment project" class="w-full h-3/5 object-cover transform group-hover:scale-110 transition-transform duration-1000" loading="lazy" />
+              <div class="p-8 flex flex-col justify-center h-2/5">
+                <h3 class="text-2xl font-bold mb-3">DevOps Automation</h3>
+                <p class="opacity-80">Automated deployment & infrastructure as code.</p>
               </div>
             </div>
-            <div class="card-back">
-              <h3>DevOps Automation</h3>
-              <p>
-                CI/CD pipeline using GitHub Actions with AWS EC2 deployment
-                and monitoring.
-              </p>
-              <a href="/services/devops-cloud.html" class="btn">View Details →</a>
+            <div class="card-back absolute inset-0 rounded-3xl backdrop-blur-xl bg-white/10 dark:bg-gray-900/30 border border-white/20 flex flex-col items-center justify-center p-10 backface-hidden rotate-y-180">
+              <h3 class="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">DevOps Pipeline</h3>
+              <p class="text-center text-lg mb-8 max-w-xs">GitHub Actions • AWS EC2/Lightsail • Docker • Terraform • Monitoring & Alerts</p>
+              <a href="/services/devops-cloud.html" class="btn-primary px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">View Details →</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="card fade-up">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="/images/seo.jpg" alt="SEO Growth Project" />
-              <div class="card-body">
-                <h3>SEO Growth Project</h3>
-                <p>Organic traffic & Google ranking improvement.</p>
+        <!-- Project 4: SEO Growth -->
+        <div class="card group perspective-1000 animate-fade-up delay-300">
+          <div class="card-inner relative h-[440px] transition-transform duration-800 transform-style-preserve-3d group-hover:rotate-y-180">
+            <div class="card-front absolute inset-0 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-900 to-black text-white backface-hidden">
+              <img src="/images/seo.jpg" alt="SEO campaign and organic traffic growth project" class="w-full h-3/5 object-cover transform group-hover:scale-110 transition-transform duration-1000" loading="lazy" />
+              <div class="p-8 flex flex-col justify-center h-2/5">
+                <h3 class="text-2xl font-bold mb-3">SEO Growth Campaign</h3>
+                <p class="opacity-80">Organic visibility & traffic boost.</p>
               </div>
             </div>
-            <div class="card-back">
-              <h3>SEO Growth</h3>
-              <p>
-                Technical SEO, on-page optimization and content strategy
-                focused on long-term growth.
-              </p>
-              <a href="/services/seo-services.html" class="btn">View Details →</a>
+            <div class="card-back absolute inset-0 rounded-3xl backdrop-blur-xl bg-white/10 dark:bg-gray-900/30 border border-white/20 flex flex-col items-center justify-center p-10 backface-hidden rotate-y-180">
+              <h3 class="text-3xl font-extrabold mb-6 bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">SEO Success</h3>
+              <p class="text-center text-lg mb-8 max-w-xs">Technical Audit • On-Page Optimization • Content Strategy • Backlink Building • 3x Traffic Increase</p>
+              <a href="/services/seo-services.html" class="btn-primary px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">View Details →</a>
             </div>
           </div>
         </div>
 
-        <!-- Optional: Govt / Infra Project (future ready) -->
-        <div class="card fade-up">
-          <div class="card-inner">
-            <div class="card-front">
-              <img
-                src="/images/tender-led.jpg"
-                alt="Government Infrastructure & LED Project"
-              />
-              <div class="card-body">
-                <h3>Government Infrastructure Project</h3>
-                <p>JAM portal & Active LED deployment.</p>
+        <!-- Project 5: Government Infrastructure -->
+        <div class="card group perspective-1000 animate-fade-up delay-400">
+          <div class="card-inner relative h-[440px] transition-transform duration-800 transform-style-preserve-3d group-hover:rotate-y-180">
+            <div class="card-front absolute inset-0 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-900 to-black text-white backface-hidden">
+              <img src="/images/tender-led.jpg" alt="GeM government tender and Active LED infrastructure project" class="w-full h-3/5 object-cover transform group-hover:scale-110 transition-transform duration-1000" loading="lazy" />
+              <div class="p-8 flex flex-col justify-center h-2/5">
+                <h3 class="text-2xl font-bold mb-3">GeM Infrastructure Project</h3>
+                <p class="opacity-80">Public sector deployment & compliance.</p>
               </div>
             </div>
-            <div class="card-back">
-              <h3>Govt & Infrastructure</h3>
-              <p>
-                Government tender-based project involving JAM portal,
-                infrastructure setup and Active LED display deployment.
-              </p>
-              <a href="/services/government-tenders.html" class="btn">
-                View Details →
-              </a>
+            <div class="card-back absolute inset-0 rounded-3xl backdrop-blur-xl bg-white/10 dark:bg-gray-900/30 border border-white/20 flex flex-col items-center justify-center p-10 backface-hidden rotate-y-180">
+              <h3 class="text-3xl font-extrabold mb-6 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">GeM & Govt Infra</h3>
+              <p class="text-center text-lg mb-8 max-w-xs">GeM Portal Bidding • Active LED Display Systems • Infrastructure Setup • Compliance & Maintenance</p>
+              <a href="/services/government-tenders.html" class="btn-primary px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">View Details →</a>
             </div>
           </div>
         </div>
 
       </div>
-
     </div>
   </section>
 
-  <!-- ================= CTA ================= -->
-  <section class="service-detail">
-    <div class="container">
-      <h2 class="section-title fade-up">
-        Want to Build Something Similar?
-      </h2>
-      <p class="section-subtitle fade-up delay-1">
-        Let’s discuss your idea and turn it into a successful digital
-        product.
+  <!-- ================= CTA SECTION ================= -->
+  <section class="py-20 md:py-32 bg-gradient-to-b from-transparent via-white/50 to-transparent dark:via-gray-900/40">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-up">Want Results Like These?</h2>
+      <p class="text-xl mb-10 opacity-90 max-w-3xl mx-auto animate-fade-up delay-100">
+        Share your vision — we'll help you build, deploy, and scale it with the same expertise.
       </p>
-      <div class="cta-center fade-up delay-2">
-        <a href="/contact.html" class="btn large">
-          Start Your Project
+      <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-up delay-200">
+        <a href="/contact.html" class="btn-primary px-12 py-6 rounded-full text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-400 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white flex items-center gap-3">
+          Start Your Project →
+        </a>
+        <a href="https://wa.me/919695842280?text=Hi%20BuildDeploy%20Tech,%20interested%20in%20your%20portfolio!" target="_blank" class="btn-whatsapp px-12 py-6 rounded-full text-xl font-semibold border-2 border-green-500 text-green-600 dark:text-green-400 hover:bg-green-600 hover:text-white transition-all duration-400 flex items-center gap-3 shadow-lg hover:shadow-2xl transform hover:scale-105 animate-pulse-slow">
+          <span class="text-3xl">💬</span> Let's Chat
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Dynamic Includes -->
   <script>
     fetch("/includes/header.html")
       .then(r => r.text())
-      .then(d => (document.getElementById("header-placeholder").innerHTML = d));
-
+      .then(d => document.getElementById("header-placeholder").innerHTML = d);
     fetch("/includes/footer.html")
       .then(r => r.text())
-      .then(d => (document.getElementById("footer-placeholder").innerHTML = d));
+      .then(d => document.getElementById("footer-placeholder").innerHTML = d);
   </script>
-
   <script src="/js/script.js"></script>
+
 </body>
 </html>
