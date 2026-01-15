@@ -98,4 +98,42 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+/* ===============================
+   CONTACT CTA TRACKING (GA4)
+================================ */
+document.addEventListener("click", function (e) {
+  const link = e.target.closest("a, button");
+
+  if (!link) return;
+
+  const text = (link.innerText || "").toLowerCase();
+  const href = link.getAttribute("href") || "";
+
+  // Track mail clicks
+  if (href.startsWith("mailto:")) {
+    if (typeof gtag === "function") {
+      gtag("event", "contact_click", {
+        event_category: "engagement",
+        event_label: "email_click",
+        transport_type: "beacon"
+      });
+    }
+  }
+
+  // Track contact buttons / links
+  if (
+    href.includes("contact.html") ||
+    text.includes("contact") ||
+    text.includes("get in touch") ||
+    text.includes("free consultation")
+  ) {
+    if (typeof gtag === "function") {
+      gtag("event", "contact_click", {
+        event_category: "engagement",
+        event_label: href || text,
+        transport_type: "beacon"
+      });
+    }
+  }
+});
 
