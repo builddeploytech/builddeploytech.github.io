@@ -1,70 +1,44 @@
-<header class="site-header fixed top-0 left-0 w-full z-50 transition-all duration-500">
-  <div class="backdrop-blur-xl bg-white/10 dark:bg-gray-900/30 border-b border-white/20 dark:border-gray-700/30 shadow-lg">
-    <div class="container mx-auto px-6">
-      <nav class="navbar flex justify-between items-center py-4 md:py-5">
-        <!-- Logo – Premium Gradient -->
-        <div class="logo">
-          <a href="/index.html" class="logo-wrap flex items-center gap-3 group">
-            <img
-              src="/images/logo.png"
-              alt="BuildDeploy Tech – DevOps & Digital Agency Logo"
-              class="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
-              loading="lazy"
-            />
-            <span class="logo-text text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
-              BuildDeploy Tech
-            </span>
-          </a>
-        </div>
+<header class="site-header">
+  <div class="header-container">
 
-        <!-- Desktop Navigation -->
-        <ul class="nav-links hidden md:flex items-center gap-8 lg:gap-12 text-lg font-medium">
-          <li><a href="/index.html" class="nav-link text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition relative after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:transition-all after:duration-300 hover:after:w-full">Home</a></li>
-          <li><a href="/about.html" class="nav-link text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition relative after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:transition-all after:duration-300 hover:after:w-full">About</a></li>
-          <li><a href="/services.html" class="nav-link text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition relative after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:transition-all after:duration-300 hover:after:w-full">Services</a></li>
-          <li><a href="/Blogs/index.html" class="nav-link text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition relative after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:transition-all after:duration-300 hover:after:w-full">Blog</a></li>
-          <li><a href="/contact.html" class="nav-link text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition relative after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:transition-all after:duration-300 hover:after:w-full">Contact</a></li>
-        </ul>
+    <!-- LOGO -->
+    <a href="/index.html" class="logo">
+      <img src="/images/logo.png" alt="BuildDeploy Tech Logo" />
+      <span>BuildDeploy Tech</span>
+    </a>
 
-        <!-- Actions: Dark Toggle + Mobile Menu -->
-        <div class="nav-actions flex items-center gap-5">
-          <!-- Dark/Light Toggle – Animated Emoji -->
-          <button
-            id="dark-toggle"
-            class="icon-btn w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/20 dark:bg-gray-800/40 backdrop-blur-sm border border-white/30 dark:border-gray-700/50 text-2xl shadow-md hover:shadow-xl hover:scale-110 transition-all duration-300"
-            aria-label="Toggle between light and dark mode"
-            type="button"
-          >
-            <span class="toggle-icon transition-transform duration-500">🌙</span>
-          </button>
+    <!-- NAVIGATION -->
+    <nav class="nav-menu" id="nav-menu">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/Blogs/devops-roadmap.html">Blog</a>
+      <a href="/contact.html" class="nav-cta">Contact</a>
+    </nav>
 
-          <!-- Mobile Hamburger -->
-          <button
-            class="mobile-menu md:hidden w-12 h-12 flex flex-col justify-center items-center gap-1.5"
-            id="mobileMenuBtn"
-            aria-label="Toggle mobile menu"
-            type="button"
-          >
-            <span class="hamburger-bar w-8 h-0.5 bg-gray-800 dark:bg-gray-200 rounded-full transition-all duration-300"></span>
-            <span class="hamburger-bar w-8 h-0.5 bg-gray-800 dark:bg-gray-200 rounded-full transition-all duration-300"></span>
-            <span class="hamburger-bar w-8 h-0.5 bg-gray-800 dark:bg-gray-200 rounded-full transition-all duration-300"></span>
-          </button>
-        </div>
-      </nav>
+    <!-- ACTIONS -->
+    <div class="header-actions">
+      <!-- Dark Mode Toggle -->
+      <button class="dark-toggle" aria-label="Toggle Dark Mode">
+        🌙
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+        ☰
+      </button>
     </div>
-  </div>
 
-  <!-- Mobile Menu Overlay (Slide-in from right) -->
-  <div id="mobileMenu" class="fixed inset-y-0 right-[-100%] w-full max-w-sm bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl transition-all duration-500 z-40 md:hidden flex flex-col">
-    <div class="flex justify-end p-6">
-      <button id="closeMenu" class="text-4xl text-gray-800 dark:text-gray-200">&times;</button>
-    </div>
-    <ul class="flex flex-col items-center gap-10 text-2xl font-semibold mt-20">
-      <li><a href="/index.html" class="nav-link-mobile hover:text-blue-500 transition">Home</a></li>
-      <li><a href="/about.html" class="nav-link-mobile hover:text-blue-500 transition">About</a></li>
-      <li><a href="/services.html" class="nav-link-mobile hover:text-blue-500 transition">Services</a></li>
-      <li><a href="/Blogs/index.html" class="nav-link-mobile hover:text-blue-500 transition">Blog</a></li>
-      <li><a href="/contact.html" class="nav-link-mobile hover:text-blue-500 transition">Contact</a></li>
-    </ul>
   </div>
 </header>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+  const menuBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+  });
+</script>
