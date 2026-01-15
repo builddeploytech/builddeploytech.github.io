@@ -1,10 +1,10 @@
 /* =====================================================
-   BuildDeploy Tech – Main JS
+   BuildDeploy Tech – Main JS (CLEAN VERSION)
    Handles:
    - Header/Footer include
    - Scroll animations
-   - Dark mode
    - Floating WhatsApp
+   - GA4 Tracking (WhatsApp + Contact)
    ===================================================== */
 
 /* ===============================
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loadHTML("footer-placeholder", "/includes/footer.html");
 
   initScrollAnimations();
-  initDarkMode();
   initFloatingWhatsApp();
 });
 
@@ -25,7 +24,9 @@ function loadHTML(id, file) {
 
   fetch(file)
     .then(res => res.text())
-    .then(data => el.innerHTML = data)
+    .then(data => {
+      el.innerHTML = data;
+    })
     .catch(err => console.error("Error loading", file, err));
 }
 
@@ -35,60 +36,49 @@ function loadHTML(id, file) {
 function initScrollAnimations() {
   const animated = document.querySelectorAll(".animate-fade-up");
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  if (!animated.length) return;
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
   animated.forEach(el => observer.observe(el));
-}
-
-/* ===============================
-   DARK MODE
-================================ */
-function initDarkMode() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-  }
-
-  document.addEventListener("click", e => {
-    if (e.target.closest(".dark-toggle")) {
-      document.body.classList.toggle("dark");
-      localStorage.setItem(
-        "theme",
-        document.body.classList.contains("dark") ? "dark" : "light"
-      );
-    }
-  });
 }
 
 /* ===============================
    FLOATING WHATSAPP
 ================================ */
 function initFloatingWhatsApp() {
+  if (document.querySelector(".floating-whatsapp")) return;
+
   const btn = document.createElement("a");
   btn.href =
     "https://wa.me/919695842280?text=Hi%20BuildDeploy%20Tech,%20I%20want%20to%20discuss%20my%20project!";
   btn.target = "_blank";
+  btn.rel = "noopener";
   btn.className = "floating-whatsapp";
+  btn.setAttribute("aria-label", "Chat on WhatsApp");
   btn.innerHTML = "💬";
 
   document.body.appendChild(btn);
 }
+
 /* ===============================
    WHATSAPP CLICK TRACKING (GA4)
 ================================ */
 document.addEventListener("click", function (e) {
   const link = e.target.closest("a");
+  if (!link || !link.href) return;
 
-  if (!link) return;
-
-  if (link.href && link.href.includes("wa.me")) {
+  if (link.href.includes("wa.me")) {
     if (typeof gtag === "function") {
       gtag("event", "whatsapp_click", {
         event_category: "engagement",
@@ -98,18 +88,18 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+
 /* ===============================
    CONTACT CTA TRACKING (GA4)
 ================================ */
 document.addEventListener("click", function (e) {
-  const link = e.target.closest("a, button");
+  const el = e.target.closest("a, button");
+  if (!el) return;
 
-  if (!link) return;
+  const text = (el.innerText || "").toLowerCase();
+  const href = el.getAttribute("href") || "";
 
-  const text = (link.innerText || "").toLowerCase();
-  const href = link.getAttribute("href") || "";
-
-  // Track mail clicks
+  // Email click
   if (href.startsWith("mailto:")) {
     if (typeof gtag === "function") {
       gtag("event", "contact_click", {
@@ -118,9 +108,10 @@ document.addEventListener("click", function (e) {
         transport_type: "beacon"
       });
     }
+    return;
   }
 
-  // Track contact buttons / links
+  // Contact CTA
   if (
     href.includes("contact.html") ||
     text.includes("contact") ||
@@ -136,4 +127,3 @@ document.addEventListener("click", function (e) {
     }
   }
 });
-
