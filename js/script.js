@@ -80,3 +80,22 @@ function initFloatingWhatsApp() {
 
   document.body.appendChild(btn);
 }
+/* ===============================
+   WHATSAPP CLICK TRACKING (GA4)
+================================ */
+document.addEventListener("click", function (e) {
+  const link = e.target.closest("a");
+
+  if (!link) return;
+
+  if (link.href && link.href.includes("wa.me")) {
+    if (typeof gtag === "function") {
+      gtag("event", "whatsapp_click", {
+        event_category: "engagement",
+        event_label: link.href,
+        transport_type: "beacon"
+      });
+    }
+  }
+});
+
