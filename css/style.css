@@ -1,3 +1,26 @@
+/* ===== GLOBAL SAFE COLORS ===== */
+body {
+  background: #ffffff;
+  color: #111827; /* dark readable text */
+  font-family: 'Inter', sans-serif;
+}
+
+p, span, li {
+  color: #374151;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #111827;
+}
+
+a {
+  color: #2563eb;
+}
+
+a:hover {
+  color: #1e40af;
+}
+
 /* ===============================
    GLOBAL RESET & BASE
 ================================ */
