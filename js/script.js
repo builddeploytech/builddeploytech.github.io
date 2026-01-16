@@ -1,8 +1,9 @@
 /* =====================================================
-   BuildDeploy Tech – Main JS (CLEAN VERSION)
+   BuildDeploy Tech – Main JS (FINAL CLEAN VERSION)
    Handles:
    - Header/Footer include
    - Scroll animations
+   - Mobile menu toggle
    - Floating WhatsApp
    - GA4 Tracking (WhatsApp + Contact)
    ===================================================== */
@@ -35,7 +36,6 @@ function loadHTML(id, file) {
 ================================ */
 function initScrollAnimations() {
   const animated = document.querySelectorAll(".animate-fade-up");
-
   if (!animated.length) return;
 
   const observer = new IntersectionObserver(
@@ -52,6 +52,18 @@ function initScrollAnimations() {
 
   animated.forEach(el => observer.observe(el));
 }
+
+/* ===============================
+   MOBILE MENU TOGGLE (FIXED)
+================================ */
+document.addEventListener("click", function (e) {
+  const menuBtn = e.target.closest("#menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (!menuBtn || !navMenu) return;
+
+  navMenu.classList.toggle("open");
+});
 
 /* ===============================
    FLOATING WHATSAPP
