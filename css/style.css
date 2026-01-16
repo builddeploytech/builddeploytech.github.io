@@ -429,7 +429,11 @@ body.dark .site-header {
   font-weight: 700;
   font-size: 1.1rem;
   text-decoration: none;
-  color: inherit;
+  color: #0249f2 /* 🔥 FIXED */
+}
+
+body.dark .logo {
+  color: #e5e7eb;
 }
 
 .logo img {
@@ -445,8 +449,12 @@ body.dark .site-header {
 .nav-menu a {
   text-decoration: none;
   font-weight: 500;
-  color: inherit;
+  color: #0249f2 /* 🔥 FIXED */
   position: relative;
+}
+
+body.dark .nav-menu a {
+  color: #e5e7eb;
 }
 
 .nav-menu a::after {
@@ -456,7 +464,7 @@ body.dark .site-header {
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: var(--primary);
+  background: #2563eb; /* brand blue */
   transition: width 0.3s ease;
 }
 
@@ -484,7 +492,12 @@ body.dark .site-header {
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
-  color: inherit;
+  color: #0249f2 /* 🔥 FIXED */
+}
+
+body.dark .dark-toggle,
+body.dark .menu-toggle {
+  color: #e5e7eb;
 }
 
 /* ===============================
