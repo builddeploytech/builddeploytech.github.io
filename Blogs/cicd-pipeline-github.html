@@ -2,152 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>CI/CD Pipeline using GitHub & Jenkins | BuildDeploy Tech</title>
+
+  <meta name="description" content="Learn how to build a CI/CD pipeline using GitHub and Jenkins to automate build, test and deployment with real-world DevOps workflow." />
+  <meta name="keywords" content="CI/CD pipeline Jenkins, GitHub Jenkins CI/CD, DevOps pipeline tutorial, Jenkins automation" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://builddeploytech.github.io/Blogs/cicd-pipeline-github.html" />
 
-  <!-- SEO -->
-  <title>CI/CD Pipeline Using GitHub Actions – Complete Guide | BuildDeploy Tech</title>
-  <meta
-    name="description"
-    content="Learn how to build a complete CI/CD pipeline using GitHub Actions. Step-by-step guide to automate build, test and deployment with real-world DevOps practices."
-  />
-  <link
-    rel="canonical"
-    href="https://builddeploytech.github.io/Blogs/cicd-pipeline-github.html"
-  />
-
-  <!-- Favicon -->
-  <link rel="icon" href="/images/logo.png" type="image/png" />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
 </head>
 
-<body>
+<body class="blog-page">
 
   <!-- Header -->
   <div id="header-placeholder"></div>
 
-  <!-- ================= BLOG HERO ================= -->
-  <section class="hero services-hero">
-    <div class="container">
-      <h1 class="animate-fade">
-        CI/CD Pipeline Using GitHub Actions – Complete Guide
-      </h1>
-      <p class="animate-fade delay-1">
-        Automate build, test and deployment using GitHub Actions with
-        real-world DevOps workflows.
-      </p>
-    </div>
-  </section>
+  <!-- BLOG CONTENT -->
+  <section class="services-section" style="max-width:900px">
 
-  <!-- ================= BLOG CONTENT ================= -->
-  <section class="service-detail">
-    <div class="container">
+    <article class="animate-fade-up">
+      <h1>CI/CD Pipeline using GitHub & Jenkins</h1>
+      <p><em>By BuildDeploy Tech</em></p>
 
-      <h2 class="section-title">What is CI/CD?</h2>
       <p>
-        CI/CD stands for Continuous Integration and Continuous Deployment.
-        It helps teams automatically build, test and deploy applications
-        whenever code changes are pushed to a repository.
+        CI/CD (Continuous Integration and Continuous Deployment) helps teams
+        deliver software faster and more reliably by automating build,
+        test and deployment processes.
       </p>
 
-      <h2 class="section-title">Why Use GitHub Actions?</h2>
+      <h2>What is CI/CD?</h2>
+      <p>
+        Continuous Integration ensures every code change is automatically
+        built and tested, while Continuous Deployment automates
+        releasing code to production.
+      </p>
+
+      <h2>Tools Used</h2>
       <ul>
-        <li>Native CI/CD solution integrated with GitHub</li>
-        <li>No external CI tool required</li>
-        <li>Easy YAML-based configuration</li>
-        <li>Free tier suitable for small projects</li>
+        <li>GitHub – Source code management</li>
+        <li>Jenkins – CI/CD automation server</li>
+        <li>Linux server (EC2)</li>
       </ul>
 
-      <h2 class="section-title">CI/CD Pipeline Architecture</h2>
+      <h2>Step 1: Setup Jenkins Server</h2>
       <p>
-        A typical CI/CD pipeline using GitHub Actions includes:
+        Install Jenkins on a Linux server:
       </p>
+
+      <pre><code>
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+sudo apt install jenkins -y
+      </code></pre>
+
+      <h2>Step 2: Connect GitHub Repository</h2>
+      <p>
+        Create a new Jenkins job and connect your GitHub repository
+        using credentials.
+      </p>
+
+      <h2>Step 3: Configure Webhooks</h2>
+      <p>
+        Add GitHub webhook so that Jenkins pipeline triggers
+        automatically on code push.
+      </p>
+
+      <h2>Step 4: Jenkins Pipeline</h2>
+      <p>
+        Sample Jenkinsfile:
+      </p>
+
+      <pre><code>
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building project'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying application'
+      }
+    }
+  }
+}
+      </code></pre>
+
+      <h2>Benefits of CI/CD</h2>
       <ul>
-        <li>Code push to GitHub repository</li>
-        <li>Automated build process</li>
-        <li>Automated testing</li>
-        <li>Deployment to server or cloud</li>
+        <li>Faster releases</li>
+        <li>Reduced manual errors</li>
+        <li>Better code quality</li>
+        <li>Improved team productivity</li>
       </ul>
 
-      <h2 class="section-title">Step-by-Step CI/CD Setup</h2>
+      <hr />
 
-      <h3>1. Create GitHub Repository</h3>
+      <!-- INTERNAL LINKS -->
       <p>
-        Push your application code to a GitHub repository.
+        👉 Related:
+        <a href="/services/devops-cloud.html">DevOps & Cloud Services</a> |
+        <a href="/Blogs/aws-ec2-deployment.html">AWS EC2 Deployment Guide</a>
       </p>
 
-      <h3>2. Create GitHub Actions Workflow</h3>
-      <p>
-        Inside your repository, create:
-        <code>.github/workflows/deploy.yml</code>
-      </p>
-
-      <h3>3. Define Workflow Triggers</h3>
-      <p>
-        Configure workflow to run on every push to the main branch.
-      </p>
-
-      <h3>4. Build & Test Stage</h3>
-      <p>
-        Add steps to install dependencies, build the application and run
-        tests automatically.
-      </p>
-
-      <h3>5. Deployment Stage</h3>
-      <p>
-        Deploy application to AWS EC2, server or cloud platform using SSH
-        or cloud-specific actions.
-      </p>
-
-      <h2 class="section-title">Best Practices</h2>
-      <ul>
-        <li>Use environment variables and secrets</li>
-        <li>Keep pipelines fast and modular</li>
-        <li>Enable rollback strategy</li>
-        <li>Monitor deployments</li>
-      </ul>
-
-      <h2 class="section-title">Related Services</h2>
-      <p>
-        Want a production-grade CI/CD pipeline for your project?
-        Explore our DevOps services:
-      </p>
-      <ul>
-        <li>
-          <a href="/services/devops-cloud.html">
-            DevOps & Cloud Services
-          </a>
-        </li>
-      </ul>
-
-      <div class="cta-center">
-        <a href="/contact.html" class="btn large">
-          Build My CI/CD Pipeline
+      <!-- CTA -->
+      <div style="margin-top:30px">
+        <a href="/contact.html" class="btn-primary big">
+          Need CI/CD Setup?
         </a>
       </div>
 
-    </div>
+    </article>
+
   </section>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
-
-  <!-- Dynamic Includes -->
-  <script>
-    fetch("/includes/header.html")
-      .then(r => r.text())
-      .then(d => (document.getElementById("header-placeholder").innerHTML = d));
-
-    fetch("/includes/footer.html")
-      .then(r => r.text())
-      .then(d => (document.getElementById("footer-placeholder").innerHTML = d));
-  </script>
-
   <script src="/js/script.js"></script>
+
 </body>
 </html>
