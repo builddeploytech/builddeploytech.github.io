@@ -2,90 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <title>AWS EC2 Deployment Guide | BuildDeploy Tech</title>
 
-  <meta name="description" content="Step-by-step guide to deploy a live website on AWS EC2 with security groups, Nginx, domain setup and best practices." />
-  <meta name="keywords" content="AWS EC2 deployment, deploy website on EC2, AWS beginners guide, DevOps AWS EC2" />
+  <meta name="description" content="Step-by-step guide to deploy a live website on AWS EC2 with security groups, Nginx, domain setup and DevOps best practices." />
+
+  <meta name="keywords" content="AWS EC2 deployment, deploy website on AWS, EC2 guide, DevOps AWS tutorial" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="canonical" href="https://builddeploytech.github.io/Blogs/aws-ec2-deployment.html" />
 
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/logo.png" />
 </head>
 
 <body class="blog-page">
 
-  <!-- Header -->
+  <!-- HEADER -->
   <div id="header-placeholder"></div>
 
+  <!-- BLOG HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content animate-fade-up">
+      <h1>AWS EC2 Deployment</h1>
+      <p>Deploy a production-ready website on AWS EC2 using DevOps best practices.</p>
+    </div>
+  </section>
+
   <!-- BLOG CONTENT -->
-  <section class="services-section" style="max-width:900px">
+  <section class="section blog-content">
 
     <article class="animate-fade-up">
-      <h1>AWS EC2 Deployment – Step by Step Guide</h1>
-      <p><em>By BuildDeploy Tech</em></p>
 
       <p>
-        AWS EC2 (Elastic Compute Cloud) allows you to deploy scalable
-        virtual servers in the cloud. In this guide, we will deploy
-        a live website on AWS EC2 using best practices.
+        AWS EC2 (Elastic Compute Cloud) allows you to run virtual servers
+        in the cloud. In this guide, we’ll deploy a live website on EC2
+        using secure, scalable and production-friendly steps.
       </p>
 
-      <h2>Step 1: Launch an EC2 Instance</h2>
+      <h2>1. Launch an EC2 Instance</h2>
       <p>
         Login to AWS Console → EC2 → Launch Instance.
-        Choose Amazon Linux or Ubuntu as OS.
+        Choose Ubuntu or Amazon Linux as the operating system.
       </p>
 
-      <h2>Step 2: Configure Security Group</h2>
+      <h2>2. Configure Security Groups</h2>
       <ul>
-        <li>Allow SSH (22)</li>
-        <li>Allow HTTP (80)</li>
-        <li>Allow HTTPS (443)</li>
+        <li>SSH – Port 22</li>
+        <li>HTTP – Port 80</li>
+        <li>HTTPS – Port 443</li>
       </ul>
 
-      <h2>Step 3: Connect to EC2</h2>
-      <p>
-        Use SSH to connect:
-      </p>
-      <pre><code>ssh -i key.pem ubuntu@your-ec2-ip</code></pre>
+      <h2>3. Connect to EC2 via SSH</h2>
+      <pre><code>ssh -i key.pem ubuntu@EC2_PUBLIC_IP</code></pre>
 
-      <h2>Step 4: Install Web Server</h2>
+      <h2>4. Install Web Server (Nginx)</h2>
       <pre><code>
 sudo apt update
 sudo apt install nginx -y
       </code></pre>
 
-      <h2>Step 5: Deploy Your Website</h2>
+      <h2>5. Deploy Website Files</h2>
       <p>
-        Upload your project files inside:
+        Upload your project files to:
       </p>
       <pre><code>/var/www/html</code></pre>
 
-      <h2>Step 6: Domain & HTTPS (Optional)</h2>
+      <h2>6. Domain & SSL Setup</h2>
       <p>
-        Point your domain to EC2 public IP and
-        use Certbot for SSL.
+        Point your domain to EC2 public IP and use
+        Certbot to enable HTTPS.
       </p>
 
       <h2>Best Practices</h2>
       <ul>
-        <li>Use IAM roles</li>
-        <li>Enable firewall</li>
-        <li>Use monitoring & backups</li>
+        <li>Use IAM roles instead of keys</li>
+        <li>Enable firewall & monitoring</li>
+        <li>Use CI/CD for deployments</li>
       </ul>
 
-      <hr />
-
       <!-- INTERNAL LINKS -->
-      <p>
-        👉 Related:
+      <div class="blog-links">
+        <p><strong>Related:</strong></p>
+        <a href="/Blogs/cicd-pipeline-github.html">CI/CD Pipeline with Jenkins</a> |
         <a href="/services/devops-cloud.html">DevOps & Cloud Services</a> |
         <a href="/projects.html">Our Projects</a>
-      </p>
+      </div>
 
       <!-- CTA -->
-      <div style="margin-top:30px">
+      <div class="blog-cta">
         <a href="/contact.html" class="btn-primary big">
           Need AWS Deployment Help?
         </a>
@@ -95,9 +101,9 @@ sudo apt install nginx -y
 
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <div id="footer-placeholder"></div>
-  <script src="/js/script.js"></script>
 
+  <script src="/js/script.js"></script>
 </body>
 </html>
