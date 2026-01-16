@@ -517,6 +517,57 @@ body.dark .site-header {
     border-color: rgba(255,255,255,0.08);
   }
 }
+/* ================= LOGO TEXT BRAND COLORS ================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 42px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  display: flex;
+  gap: 2px;
+}
+
+/* Build – Blue */
+.logo-build {
+  color: #1f4fd8;
+}
+
+/* Deploy – Orange */
+.logo-deploy {
+  color: #f59e0b;
+}
+
+/* Tech – Blue */
+.logo-tech {
+  color: #1f4fd8;
+  font-size: 0.9rem;
+  margin-left: 4px;
+  align-self: flex-end;
+}
+
+/* Mobile tweak */
+@media (max-width: 640px) {
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo img {
+    height: 36px;
+  }
+}
+
 /* ===============================
    FOOTER
 ================================ */
