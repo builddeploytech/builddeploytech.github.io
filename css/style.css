@@ -658,4 +658,131 @@ body.dark .site-footer {
     font-size: 2.2rem;
   }
 }
+/* =====================================================
+   BLOG SYSTEM – COMMON CSS (ALL BLOGS)
+===================================================== */
+
+/* HERO */
+.page-hero {
+  padding: 120px 20px 80px;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #ffffff;
+  text-align: center;
+}
+
+.page-hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.page-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* SECTION */
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* BLOG CONTENT */
+.blog-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.blog-content h2 {
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.blog-content p,
+.blog-content li {
+  line-height: 1.7;
+  color: #374151;
+}
+
+.blog-content pre {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+/* INTERNAL LINKS */
+.blog-links {
+  margin-top: 40px;
+}
+
+.blog-links a {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* CTA */
+.blog-cta {
+  margin-top: 40px;
+}
+
+/* BLOG LIST PAGE */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.blog-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.blog-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  color: #374151;
+}
+
+/* ANIMATION */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.animate-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .page-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 60px 16px;
+  }
+}
 
