@@ -2,168 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>AWS EC2 Deployment Guide | BuildDeploy Tech</title>
+
+  <meta name="description" content="Step-by-step guide to deploy a live website on AWS EC2 with security groups, Nginx, domain setup and best practices." />
+  <meta name="keywords" content="AWS EC2 deployment, deploy website on EC2, AWS beginners guide, DevOps AWS EC2" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://builddeploytech.github.io/Blogs/aws-ec2-deployment.html" />
 
-  <!-- SEO -->
-  <title>How to Deploy a Website on AWS EC2 (Step-by-Step) | BuildDeploy Tech</title>
-  <meta
-    name="description"
-    content="Learn how to deploy a website on AWS EC2 step by step. Complete guide covering EC2 setup, security groups, Nginx/Apache, domain setup and best practices."
-  />
-  <link
-    rel="canonical"
-    href="https://builddeploytech.github.io/Blogs/aws-ec2-deployment.html"
-  />
-
-  <!-- Favicon -->
-  <link rel="icon" href="/images/logo.png" type="image/png" />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
 </head>
 
-<body>
+<body class="blog-page">
 
   <!-- Header -->
   <div id="header-placeholder"></div>
 
-  <!-- ================= BLOG HERO ================= -->
-  <section class="hero services-hero">
-    <div class="container">
-      <h1 class="animate-fade">
-        How to Deploy a Website on AWS EC2 (Step-by-Step Guide)
-      </h1>
-      <p class="animate-fade delay-1">
-        A beginner-friendly guide to deploy a production-ready website on
-        AWS EC2 with security and best practices.
-      </p>
-    </div>
-  </section>
+  <!-- BLOG CONTENT -->
+  <section class="services-section" style="max-width:900px">
 
-  <!-- ================= BLOG CONTENT ================= -->
-  <section class="service-detail">
-    <div class="container">
+    <article class="animate-fade-up">
+      <h1>AWS EC2 Deployment – Step by Step Guide</h1>
+      <p><em>By BuildDeploy Tech</em></p>
 
-      <h2 class="section-title">What is AWS EC2?</h2>
       <p>
-        Amazon EC2 (Elastic Compute Cloud) is a scalable virtual server
-        provided by AWS that allows you to run applications and websites
-        in the cloud with full control.
+        AWS EC2 (Elastic Compute Cloud) allows you to deploy scalable
+        virtual servers in the cloud. In this guide, we will deploy
+        a live website on AWS EC2 using best practices.
       </p>
 
-      <h2 class="section-title">Prerequisites</h2>
-      <ul>
-        <li>AWS account</li>
-        <li>Basic Linux commands</li>
-        <li>Website files (HTML/CSS/JS or backend app)</li>
-        <li>Domain name (optional)</li>
-      </ul>
-
-      <h2 class="section-title">Step-by-Step Deployment Guide</h2>
-
-      <h3>Step 1: Launch an EC2 Instance</h3>
+      <h2>Step 1: Launch an EC2 Instance</h2>
       <p>
         Login to AWS Console → EC2 → Launch Instance.
-        Choose Ubuntu 22.04 LTS and a free-tier eligible instance type.
+        Choose Amazon Linux or Ubuntu as OS.
       </p>
 
-      <h3>Step 2: Configure Key Pair & Security Group</h3>
-      <p>
-        Create a key pair for SSH access.  
-        Open ports:
-      </p>
+      <h2>Step 2: Configure Security Group</h2>
       <ul>
-        <li>22 – SSH</li>
-        <li>80 – HTTP</li>
-        <li>443 – HTTPS (optional)</li>
+        <li>Allow SSH (22)</li>
+        <li>Allow HTTP (80)</li>
+        <li>Allow HTTPS (443)</li>
       </ul>
 
-      <h3>Step 3: Connect to EC2</h3>
+      <h2>Step 3: Connect to EC2</h2>
       <p>
-        Use SSH to connect to your instance:
+        Use SSH to connect:
       </p>
-      <pre>
-ssh -i key.pem ubuntu@your-ec2-public-ip
-      </pre>
+      <pre><code>ssh -i key.pem ubuntu@your-ec2-ip</code></pre>
 
-      <h3>Step 4: Install Web Server</h3>
-      <p>
-        Update packages and install Nginx or Apache:
-      </p>
-      <pre>
+      <h2>Step 4: Install Web Server</h2>
+      <pre><code>
 sudo apt update
 sudo apt install nginx -y
-      </pre>
+      </code></pre>
 
-      <h3>Step 5: Deploy Website Files</h3>
+      <h2>Step 5: Deploy Your Website</h2>
       <p>
-        Upload your website files to:
+        Upload your project files inside:
       </p>
-      <pre>
-/var/www/html
-      </pre>
+      <pre><code>/var/www/html</code></pre>
 
-      <h3>Step 6: Verify Deployment</h3>
+      <h2>Step 6: Domain & HTTPS (Optional)</h2>
       <p>
-        Open your EC2 public IP in browser.
-        Your website should be live 🎉
+        Point your domain to EC2 public IP and
+        use Certbot for SSL.
       </p>
 
-      <h3>Step 7: (Optional) Domain & SSL</h3>
-      <p>
-        Connect your domain using DNS records and secure your site with
-        SSL using Certbot (Let’s Encrypt).
-      </p>
-
-      <h2 class="section-title">Best Practices</h2>
+      <h2>Best Practices</h2>
       <ul>
-        <li>Use firewall & least privilege IAM</li>
-        <li>Enable automatic updates</li>
-        <li>Use HTTPS</li>
-        <li>Monitor server health</li>
-        <li>Backup regularly</li>
+        <li>Use IAM roles</li>
+        <li>Enable firewall</li>
+        <li>Use monitoring & backups</li>
       </ul>
 
-      <h2 class="section-title">Need Professional Help?</h2>
-      <p>
-        If you want a secure, scalable and automated AWS deployment with
-        CI/CD and monitoring, check our services:
-      </p>
-      <ul>
-        <li>
-          <a href="/services/devops-cloud.html">
-            DevOps & Cloud Services
-          </a>
-        </li>
-      </ul>
+      <hr />
 
-      <div class="cta-center">
-        <a href="/contact.html" class="btn large">
-          Deploy My Website on AWS
+      <!-- INTERNAL LINKS -->
+      <p>
+        👉 Related:
+        <a href="/services/devops-cloud.html">DevOps & Cloud Services</a> |
+        <a href="/projects.html">Our Projects</a>
+      </p>
+
+      <!-- CTA -->
+      <div style="margin-top:30px">
+        <a href="/contact.html" class="btn-primary big">
+          Need AWS Deployment Help?
         </a>
       </div>
 
-    </div>
+    </article>
+
   </section>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
-
-  <!-- Dynamic Includes -->
-  <script>
-    fetch("/includes/header.html")
-      .then(r => r.text())
-      .then(d => (document.getElementById("header-placeholder").innerHTML = d));
-
-    fetch("/includes/footer.html")
-      .then(r => r.text())
-      .then(d => (document.getElementById("footer-placeholder").innerHTML = d));
-  </script>
-
   <script src="/js/script.js"></script>
+
 </body>
 </html>
