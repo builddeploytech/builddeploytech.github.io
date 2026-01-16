@@ -356,12 +356,15 @@ img {
     font-size: 1.05rem;
   }
 }
+
 /* Scroll animation trigger */
 .animate-fade-up.visible {
   animation-play-state: running;
 }
 
-/* Floating WhatsApp */
+/* ===============================
+   FLOATING WHATSAPP
+================================ */
 .floating-whatsapp {
   position: fixed;
   right: 20px;
@@ -392,6 +395,7 @@ img {
   70% { box-shadow: 0 0 0 20px rgba(22,163,74,0); }
   100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); }
 }
+
 /* ===============================
    HEADER
 ================================ */
@@ -483,14 +487,18 @@ body.dark .site-header {
   color: inherit;
 }
 
-/* MOBILE MENU */
+/* ===============================
+   MOBILE MENU (FIXED)
+================================ */
 .menu-toggle {
   display: none;
 }
 
 @media (max-width: 900px) {
+
   .menu-toggle {
     display: block;
+    z-index: 1001;
   }
 
   .nav-menu {
@@ -502,10 +510,16 @@ body.dark .site-header {
     flex-direction: column;
     gap: 0;
     display: none;
+    z-index: 1000; /* 🔥 IMPORTANT FIX */
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: all 0.3s ease;
   }
 
   .nav-menu.open {
     display: flex;
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .nav-menu a {
@@ -517,6 +531,7 @@ body.dark .site-header {
     border-color: rgba(255,255,255,0.08);
   }
 }
+
 /* ================= LOGO TEXT BRAND COLORS ================= */
 
 .logo {
