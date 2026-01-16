@@ -2,76 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <title>CI/CD Pipeline using GitHub & Jenkins | BuildDeploy Tech</title>
 
-  <meta name="description" content="Learn how to build a CI/CD pipeline using GitHub and Jenkins to automate build, test and deployment with real-world DevOps workflow." />
-  <meta name="keywords" content="CI/CD pipeline Jenkins, GitHub Jenkins CI/CD, DevOps pipeline tutorial, Jenkins automation" />
+  <meta name="description" content="Step-by-step guide to build a CI/CD pipeline using GitHub and Jenkins for automated build, test and deployment." />
+
+  <meta name="keywords" content="CI/CD pipeline Jenkins, GitHub Jenkins CI/CD, DevOps automation, Jenkins pipeline tutorial" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="canonical" href="https://builddeploytech.github.io/Blogs/cicd-pipeline-github.html" />
 
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/logo.png" />
 </head>
 
 <body class="blog-page">
 
-  <!-- Header -->
+  <!-- HEADER -->
   <div id="header-placeholder"></div>
 
+  <!-- BLOG HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content animate-fade-up">
+      <h1>CI/CD Pipeline with GitHub & Jenkins</h1>
+      <p>Automate build and deployment using industry-standard DevOps pipelines.</p>
+    </div>
+  </section>
+
   <!-- BLOG CONTENT -->
-  <section class="services-section" style="max-width:900px">
+  <section class="section blog-content">
 
     <article class="animate-fade-up">
-      <h1>CI/CD Pipeline using GitHub & Jenkins</h1>
-      <p><em>By BuildDeploy Tech</em></p>
 
       <p>
-        CI/CD (Continuous Integration and Continuous Deployment) helps teams
-        deliver software faster and more reliably by automating build,
-        test and deployment processes.
+        CI/CD (Continuous Integration and Continuous Deployment) is a core DevOps
+        practice that helps teams deliver software faster and with fewer errors.
+        In this guide, we’ll build a CI/CD pipeline using GitHub and Jenkins.
       </p>
 
       <h2>What is CI/CD?</h2>
       <p>
-        Continuous Integration ensures every code change is automatically
-        built and tested, while Continuous Deployment automates
-        releasing code to production.
+        Continuous Integration ensures that every code change is automatically
+        built and tested. Continuous Deployment automates releasing code to
+        production environments.
       </p>
 
-      <h2>Tools Used</h2>
+      <h2>Tools Used in This Pipeline</h2>
       <ul>
         <li>GitHub – Source code management</li>
-        <li>Jenkins – CI/CD automation server</li>
-        <li>Linux server (EC2)</li>
+        <li>Jenkins – Automation server</li>
+        <li>Linux server (AWS EC2)</li>
       </ul>
 
       <h2>Step 1: Setup Jenkins Server</h2>
       <p>
-        Install Jenkins on a Linux server:
+        Install Jenkins on a Linux machine:
       </p>
-
       <pre><code>
 sudo apt update
 sudo apt install openjdk-17-jdk -y
 sudo apt install jenkins -y
       </code></pre>
 
-      <h2>Step 2: Connect GitHub Repository</h2>
+      <h2>Step 2: Create Jenkins Job</h2>
       <p>
-        Create a new Jenkins job and connect your GitHub repository
-        using credentials.
+        Create a new pipeline job in Jenkins and connect it with
+        your GitHub repository using credentials.
       </p>
 
-      <h2>Step 3: Configure Webhooks</h2>
+      <h2>Step 3: Configure GitHub Webhook</h2>
       <p>
-        Add GitHub webhook so that Jenkins pipeline triggers
-        automatically on code push.
+        Add a webhook in GitHub so Jenkins triggers automatically
+        on every code push.
       </p>
 
-      <h2>Step 4: Jenkins Pipeline</h2>
-      <p>
-        Sample Jenkinsfile:
-      </p>
+      <h2>Step 4: Jenkins Pipeline (Jenkinsfile)</h2>
+      <p>Example Jenkins pipeline:</p>
 
       <pre><code>
 pipeline {
@@ -79,7 +86,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Building project'
+        echo 'Building application'
       }
     }
     stage('Deploy') {
@@ -95,23 +102,22 @@ pipeline {
       <ul>
         <li>Faster releases</li>
         <li>Reduced manual errors</li>
-        <li>Better code quality</li>
-        <li>Improved team productivity</li>
+        <li>Improved code quality</li>
+        <li>Higher team productivity</li>
       </ul>
 
-      <hr />
-
       <!-- INTERNAL LINKS -->
-      <p>
-        👉 Related:
+      <div class="blog-links">
+        <p><strong>Related:</strong></p>
+        <a href="/Blogs/aws-ec2-deployment.html">AWS EC2 Deployment Guide</a> |
         <a href="/services/devops-cloud.html">DevOps & Cloud Services</a> |
-        <a href="/Blogs/aws-ec2-deployment.html">AWS EC2 Deployment Guide</a>
-      </p>
+        <a href="/projects.html">Our Projects</a>
+      </div>
 
       <!-- CTA -->
-      <div style="margin-top:30px">
+      <div class="blog-cta">
         <a href="/contact.html" class="btn-primary big">
-          Need CI/CD Setup?
+          Need CI/CD Setup Help?
         </a>
       </div>
 
@@ -119,9 +125,9 @@ pipeline {
 
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <div id="footer-placeholder"></div>
-  <script src="/js/script.js"></script>
 
+  <script src="/js/script.js"></script>
 </body>
 </html>
