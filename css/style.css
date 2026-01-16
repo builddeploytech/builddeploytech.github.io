@@ -83,6 +83,7 @@ h1 {
 h2 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
+  color: #d1ff24;
 }
 
 h3 {
