@@ -587,4 +587,75 @@ body.dark .site-header {
 body.dark .site-footer {
   background: #000;
 }
+/* ================= BLOG PAGE ================= */
+
+.page-hero {
+  padding: 120px 20px 80px;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #fff;
+  text-align: center;
+}
+
+.page-hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.page-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.blog-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.blog-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  color: #374151;
+}
+
+.blog-card a {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .page-hero h1 {
+    font-size: 2.2rem;
+  }
+}
 
