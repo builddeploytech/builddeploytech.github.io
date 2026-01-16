@@ -1,24 +1,16 @@
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XWD9BT36R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4XWD9BT36R');
-</script>
-
 <header class="site-header">
   <div class="header-container">
 
     <!-- LOGO -->
     <a href="/index.html" class="logo">
-  <img src="/images/logo.png" alt="BuildDeploy Tech Logo" />
-  <span class="logo-text">
-    <span class="logo-build">Build</span>
-    <span class="logo-deploy">Deploy</span>
-    <span class="logo-tech">Tech</span>
-  </span>
-</a>
+      <img src="/images/logo.png" alt="BuildDeploy Tech Logo" />
+      <span class="logo-text">
+        <span class="logo-build">Build</span>
+        <span class="logo-deploy">Deploy</span>
+        <span class="logo-tech">Tech</span>
+      </span>
+    </a>
+
     <!-- NAVIGATION -->
     <nav class="nav-menu" id="nav-menu">
       <a href="/index.html">Home</a>
@@ -31,7 +23,6 @@
 
     <!-- ACTIONS -->
     <div class="header-actions">
-
       <!-- Mobile Menu Button -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
         ☰
@@ -40,13 +31,3 @@
 
   </div>
 </header>
-
-<!-- MOBILE MENU SCRIPT -->
-<script>
-  const menuBtn = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  menuBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-  });
-</script>
