@@ -283,6 +283,68 @@ img {
 }
 
 /* ===============================
+   NAV DROPDOWN
+================================ */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #ffffff;
+  min-width: 260px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+body.dark .dropdown-menu {
+  background: #020617;
+}
+
+.dropdown-menu a {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark .dropdown-menu a {
+  border-color: rgba(255,255,255,0.08);
+}
+
+.dropdown-menu a:hover {
+  background: rgba(37,99,235,0.08);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .dropdown-menu.open {
+    display: flex;
+  }
+}
+
+/* ===============================
    WHY US
 ================================ */
 .why-us-section {
