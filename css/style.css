@@ -657,6 +657,40 @@ body.dark .menu-toggle {
     height: 36px;
   }
 }
+/* ===============================
+   BLOG ROW IMAGE FIX
+================================ */
+.blog-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.blog-row img {
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.blog-row-content {
+  flex: 1;
+}
+
+/* MOBILE BLOG ROW */
+@media (max-width: 768px) {
+  .blog-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .blog-row img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 
 /* ===============================
    FOOTER
