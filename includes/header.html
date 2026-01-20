@@ -14,7 +14,20 @@
     <!-- NAVIGATION -->
     <nav class="nav-menu" id="nav-menu">
       <a href="/index.html">Home</a>
-      <a href="/services.html">Services</a>
+
+      <!-- SERVICES DROPDOWN -->
+      <div class="nav-dropdown">
+        <a href="/services.html" class="nav-parent">Services ▾</a>
+        <div class="dropdown-menu">
+          <a href="/services/web-development.html">Web Development</a>
+          <a href="/services/app-development.html">Mobile App Development</a>
+          <a href="/services/devops-cloud.html">DevOps & Cloud</a>
+          <a href="/services/seo-services.html">SEO Services</a>
+          <a href="/services/government-tenders.html">GeM & Government Tenders</a>
+          <a href="/services/active-led-display-solutions.html">Active LED Display</a>
+        </div>
+      </div>
+
       <a href="/projects.html">Projects</a>
       <a href="/about.html">About</a>
       <a href="/blogs.html">Blog</a>
@@ -31,3 +44,23 @@
 
   </div>
 </header>
+
+<!-- MOBILE + DROPDOWN SCRIPT -->
+<script>
+  const menuBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+  });
+
+  // Mobile dropdown toggle
+  document.querySelectorAll(".nav-parent").forEach(parent => {
+    parent.addEventListener("click", e => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        parent.nextElementSibling.classList.toggle("open");
+      }
+    });
+  });
+</script>
