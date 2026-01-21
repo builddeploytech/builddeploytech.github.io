@@ -73,7 +73,7 @@ function initFloatingWhatsApp() {
 
   const btn = document.createElement("a");
   btn.href =
-    "https://wa.me/919695842280?text=Hi%20BuildDeploy%20Tech,%20I%20want%20to%20discuss%20my%20project!";
+    "https://wa.me/916392930918?text=Hi%20BuildDeploy%20Tech,%20I%20want%20to%20discuss%20my%20project!";
   btn.target = "_blank";
   btn.rel = "noopener";
   btn.className = "floating-whatsapp";
