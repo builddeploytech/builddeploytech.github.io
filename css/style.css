@@ -1047,5 +1047,15 @@ body.dark .contact-details-box {
   font-size: 0.95rem;
   opacity: 0.85;
 }
+.social-icons a {
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 8px;
+  color: #222;
+}
+
+.social-icons a:hover {
+  color: #0A66C2;
+}
 
 
