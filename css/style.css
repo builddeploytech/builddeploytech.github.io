@@ -93,7 +93,7 @@ h3 {
 
 p {
   font-size: 1.05rem;
-  color: var(--gray);
+  color: #49649b;
 }
 
 /* ===============================
@@ -696,7 +696,7 @@ body.dark .menu-toggle {
    FOOTER
 ================================ */
 .site-footer {
-  background: #020617;
+  background: #343332;
   color: #cbd5f5;
   padding: 5rem 1.5rem 2rem;
 }
@@ -711,8 +711,8 @@ body.dark .menu-toggle {
 
 .footer-col h4 {
   margin-bottom: 1.2rem;
-  font-size: 1.1rem;
-  color: #f8fafc;
+  font-size: 1.5rem;
+  color: #1f4fd8;
 }
 
 .footer-col ul {
@@ -741,8 +741,8 @@ body.dark .menu-toggle {
 }
 
 .footer-brand img {
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 45px;
 }
 
 .footer-brand h3 {
@@ -1047,16 +1047,9 @@ body.dark .contact-details-box {
   font-size: 0.95rem;
   opacity: 0.85;
 }
-.social-icons a {
-  text-decoration: none;
-  font-weight: 500;
-  margin: 0 8px;
-  color: #222;
-}
 
-.social-icons a:hover {
-  color: #0A66C2;
-}
+
+/* SOCIAL ICONS - BRAND COLORS */
 .social-icons {
   text-align: center;
   margin: 20px 0;
@@ -1064,13 +1057,29 @@ body.dark .contact-details-box {
 
 .social-icons a {
   margin: 0 12px;
-  font-size: 20px;
-  color: #222;
-  transition: color 0.3s ease;
+  font-size: 22px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
-.social-icons a:hover {
+/* Instagram */
+.social-icons a[aria-label="Instagram"] {
+  color: #E1306C;
+}
+
+/* LinkedIn */
+.social-icons a[aria-label="LinkedIn"] {
   color: #0A66C2;
+}
+
+/* Telegram */
+.social-icons a[aria-label="Telegram"] {
+  color: #229ED9;
+}
+
+/* Hover effect */
+.social-icons a:hover {
+  transform: scale(1.15);
 }
 
 
