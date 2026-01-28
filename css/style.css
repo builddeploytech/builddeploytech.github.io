@@ -1057,5 +1057,20 @@ body.dark .contact-details-box {
 .social-icons a:hover {
   color: #0A66C2;
 }
+.social-icons {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.social-icons a {
+  margin: 0 12px;
+  font-size: 20px;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0A66C2;
+}
 
 
