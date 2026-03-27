@@ -1,6 +1,5 @@
 /* =====================================================
    BuildDeploy Tech – Main JS (FINAL CLEAN & OPTIMIZED VERSION)
-   Compatible with your new Premium Light CSS
    ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,7 +34,7 @@ function loadHeaderAndFooter() {
 }
 
 /* ===============================
-   SCROLL ANIMATIONS (Fade Up)
+   SCROLL ANIMATIONS (FIXED + SAFE)
 ================================ */
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll(".animate-fade-up");
@@ -46,15 +45,25 @@ function initScrollAnimations() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // Performance optimization
+        observer.unobserve(entry.target);
       }
     });
   }, { 
-    threshold: 0.12,
+    threshold: 0.1,
     rootMargin: "0px 0px -50px 0px"
   });
 
   animatedElements.forEach(el => observer.observe(el));
+
+  // 🔥 FALLBACK (IMPORTANT FIX)
+  // Agar kisi reason se animation trigger nahi hota
+  setTimeout(() => {
+    animatedElements.forEach(el => {
+      if (!el.classList.contains("visible")) {
+        el.classList.add("visible");
+      }
+    });
+  }, 800);
 }
 
 /* ===============================
@@ -71,7 +80,6 @@ function initMobileMenu() {
     });
   }
 
-  // Close mobile menu when clicking outside
   document.addEventListener("click", (e) => {
     if (navMenu && navMenu.classList.contains("open")) {
       if (!navMenu.contains(e.target) && e.target !== menuToggle) {
@@ -80,7 +88,6 @@ function initMobileMenu() {
     }
   });
 
-  // Optional: Close menu when clicking any nav link (good UX)
   if (navMenu) {
     navMenu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
@@ -98,18 +105,12 @@ function initHeaderScrollEffect() {
   
   if (!header) return;
 
-  let lastScroll = 0;
-
   window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > 80) {
+    if (window.scrollY > 80) {
       header.classList.add("scrolled");
     } else {
       header.classList.remove("scrolled");
     }
-
-    lastScroll = currentScroll;
   });
 }
 
@@ -117,7 +118,6 @@ function initHeaderScrollEffect() {
    FLOATING WHATSAPP BUTTON
 ================================ */
 function initFloatingWhatsApp() {
-  // Agar already exist karta hai toh skip
   if (document.querySelector(".floating-whatsapp")) return;
 
   const waBtn = document.createElement("a");
@@ -140,7 +140,6 @@ function initTracking() {
 
     if (!link || !link.href) return;
 
-    // WhatsApp Click Tracking
     if (link.href.includes("wa.me")) {
       if (typeof gtag === "function") {
         gtag("event", "whatsapp_click", {
@@ -151,7 +150,6 @@ function initTracking() {
       }
     }
 
-    // Contact / Quote Click Tracking
     const text = (link.innerText || "").toLowerCase().trim();
     const href = link.getAttribute("href") || "";
 
@@ -174,8 +172,7 @@ function initTracking() {
 }
 
 /* ===============================
-   OPTIONAL: Dropdown Click Support for Mobile
-   (Agar future mein chahiye toh use kar sakte ho)
+   DROPDOWN SUPPORT
 ================================ */
 function toggleDropdown(dropdownId) {
   const dropdown = document.getElementById(dropdownId);
@@ -184,7 +181,9 @@ function toggleDropdown(dropdownId) {
   }
 }
 
-// Keyboard accessibility (Escape key to close mobile menu)
+/* ===============================
+   ESC KEY SUPPORT
+================================ */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     const navMenu = document.getElementById("nav-menu");
