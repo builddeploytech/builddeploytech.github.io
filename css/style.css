@@ -270,18 +270,18 @@ img {
   width: 100%;
 }
 
-/* ==================== DROPDOWN MENU ==================== */
+/* ==================== IMPROVED DROPDOWN MENU ==================== */
 .nav-dropdown {
   position: relative;
 }
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 8px);           /* thoda gap diya smooth feel ke liye */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(10px);
   background: #ffffff;
-  min-width: 240px;
+  min-width: 260px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-hover);
   padding: 12px 0;
@@ -290,25 +290,56 @@ img {
   z-index: 10000;
   border: 1px solid var(--border-light);
   opacity: 0;
-  transition: all 0.3s ease;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dropdown-menu.show {
+/* Hover Effect - Desktop */
+.nav-dropdown:hover .dropdown-menu {
   display: flex;
   opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
+/* Dropdown Links Styling */
 .dropdown-menu a {
   padding: 14px 24px;
   color: var(--text-dark);
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
-  background: #f1f5f9;
+  background: #f8fafc;
   color: var(--primary-blue);
-  padding-left: 28px;
+  padding-left: 30px;
+}
+
+/* ==================== MOBILE DROPDOWN FIX ==================== */
+@media (max-width: 992px) {
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0 0 0 20px;
+    width: 100%;
+    display: none;                    /* Mobile pe hover mat chalne do */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    display: none;                    /* Hover mobile pe disable */
+  }
+
+  /* Mobile mein click se khulega (agar JS add karoge toh) */
+  .dropdown-menu.mobile-open {
+    display: flex;
+  }
 }
 
 /* ==================== HEADER ACTIONS ==================== */
