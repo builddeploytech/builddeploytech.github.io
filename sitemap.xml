@@ -1,57 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- 🏠 Homepage -->
+  <url>
+    <loc>https://builddeploytech.github.io/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
 
-<url>
-  <loc>https://builddeploytech.github.io/</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://builddeploytech.github.io/contact.html</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://builddeploytech.github.io/services/web-development.html</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://builddeploytech.github.io/services/app-development.html</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://builddeploytech.github.io/services/devops-cloud.html</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://builddeploytech.github.io/services/seo-services.html</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://builddeploytech.github.io/Blogs/devops-roadmap.html</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://builddeploytech.github.io/Blogs/cicd-pipeline-github.html</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://builddeploytech.github.io/Blogs/aws-ec2-deployment.html</loc>
-  <lastmod>2026-01-08T11:28:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <!-- 📄 Core Pages -->
+  <url>
+    <loc>https://builddeploytech.github.io/about.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
 
+  <url>
+    <loc>https://builddeploytech.github.io/contact.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/services.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/projects.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/pricing.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/blogs.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- 💰 Services -->
+  <url>
+    <loc>https://builddeploytech.github.io/services/web-development.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/services/seo-services.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/services/devops-cloud.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/services/app-development.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/services/active-led-display-solutions.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/services/government-tenders.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- 🧠 Blogs (IMPORTANT: Capital B as per your structure) -->
+  <url>
+    <loc>https://builddeploytech.github.io/Blogs/devops-roadmap-2026.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/Blogs/devops-roadmap.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/Blogs/cicd-pipeline-github.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/Blogs/aws-ec2-deployment.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/Blogs/seo-strategy.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/Blogs/mobile-app-development.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/Blogs/active-led-solutions.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.github.io/Blogs/gem-tender-guide.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
 
 </urlset>
