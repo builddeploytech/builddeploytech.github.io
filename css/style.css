@@ -197,44 +197,82 @@ img {
   justify-content: space-between;
 }
 
-/* ==================== LOGO ==================== */
+/* ==================== LOGO (Bigger + Hover Effect) ==================== */
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.45rem;
   color: var(--primary-blue);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo:hover {
+  transform: scale(1.06);
+  filter: brightness(1.08);
 }
 
 .logo img {
-  height: 52px;
+  height: 65px;           /* Bigger size */
   width: auto;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 4px 8px rgba(30, 64, 175, 0.15));
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 8px 16px rgba(30, 64, 175, 0.25));
+  transform: scale(1.05);
 }
 
 .logo-text {
   display: flex;
   align-items: center;
-  gap: 4px;
-  letter-spacing: -0.5px;
+  gap: 5px;
+  letter-spacing: -0.6px;
+  font-size: 1.55rem;        /* Text bhi bada kiya */
+  line-height: 1.1;
 }
 
 .logo-build {
   color: var(--primary-blue);
+  font-weight: 800;
 }
 
 .logo-deploy {
   color: var(--accent-orange);
+  font-weight: 800;
 }
 
 .logo-tech {
   color: var(--primary-blue);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   align-self: flex-end;
-  margin-left: 2px;
+  margin-left: 3px;
+  font-weight: 600;
+  opacity: 0.95;
 }
 
+/* Mobile adjustments for bigger logo */
+@media (max-width: 768px) {
+  .logo img {
+    height: 58px;           /* Mobile pe thoda chhota rakha */
+  }
+  
+  .logo-text {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 52px;
+  }
+  
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}
 /* ==================== NAV MENU ==================== */
 .nav-menu {
   display: flex;
