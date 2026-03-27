@@ -1160,3 +1160,27 @@ body.dark .contact-details-box {
   color: #38bdf8;
   margin-top: 10px;
 }
+/* Optional FAQ Styling */
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: #fff;
+}
+
+.faq-item summary:hover {
+    background: #f8f9fa;
+}
+
+.faq-item p {
+    padding: 0 1.25rem 1.25rem;
+    margin: 0;
+    line-height: 1.6;
+}
