@@ -1,141 +1,193 @@
 /* =====================================================
-   BuildDeploy Tech – Main JS (FINAL CLEAN VERSION)
-   Handles:
-   - Header/Footer include
-   - Scroll animations
-   - Mobile menu toggle
-   - Floating WhatsApp
-   - GA4 Tracking (WhatsApp + Contact)
+   BuildDeploy Tech – Main JS (FINAL CLEAN & OPTIMIZED VERSION)
+   Compatible with your new Premium Light CSS
    ===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadHeaderAndFooter();
+  initScrollAnimations();
+  initMobileMenu();
+  initFloatingWhatsApp();
+  initHeaderScrollEffect();
+  initTracking();
+});
 
 /* ===============================
    LOAD HEADER & FOOTER
 ================================ */
-document.addEventListener("DOMContentLoaded", () => {
-  loadHTML("header-placeholder", "/includes/header.html");
-  loadHTML("footer-placeholder", "/includes/footer.html");
+function loadHeaderAndFooter() {
+  const headerEl = document.getElementById("header-placeholder");
+  const footerEl = document.getElementById("footer-placeholder");
 
-  initScrollAnimations();
-  initFloatingWhatsApp();
-});
+  if (headerEl) {
+    fetch("/includes/header.html")
+      .then(res => res.text())
+      .then(data => { headerEl.innerHTML = data; })
+      .catch(err => console.error("Error loading header:", err));
+  }
 
-function loadHTML(id, file) {
-  const el = document.getElementById(id);
-  if (!el) return;
-
-  fetch(file)
-    .then(res => res.text())
-    .then(data => {
-      el.innerHTML = data;
-    })
-    .catch(err => console.error("Error loading", file, err));
+  if (footerEl) {
+    fetch("/includes/footer.html")
+      .then(res => res.text())
+      .then(data => { footerEl.innerHTML = data; })
+      .catch(err => console.error("Error loading footer:", err));
+  }
 }
 
 /* ===============================
-   SCROLL ANIMATIONS
+   SCROLL ANIMATIONS (Fade Up)
 ================================ */
 function initScrollAnimations() {
-  const animated = document.querySelectorAll(".animate-fade-up");
-  if (!animated.length) return;
+  const animatedElements = document.querySelectorAll(".animate-fade-up");
+  
+  if (!animatedElements.length) return;
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // Performance optimization
+      }
+    });
+  }, { 
+    threshold: 0.12,
+    rootMargin: "0px 0px -50px 0px"
+  });
 
-  animated.forEach(el => observer.observe(el));
+  animatedElements.forEach(el => observer.observe(el));
 }
 
 /* ===============================
-   MOBILE MENU TOGGLE (FIXED)
+   MOBILE MENU TOGGLE + DROPDOWN SUPPORT
 ================================ */
-document.addEventListener("click", function (e) {
-  const menuBtn = e.target.closest("#menu-toggle");
+function initMobileMenu() {
+  const menuToggle = document.getElementById("menu-toggle");
   const navMenu = document.getElementById("nav-menu");
 
-  if (!menuBtn || !navMenu) return;
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle("open");
+    });
+  }
 
-  navMenu.classList.toggle("open");
-});
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (navMenu && navMenu.classList.contains("open")) {
+      if (!navMenu.contains(e.target) && e.target !== menuToggle) {
+        navMenu.classList.remove("open");
+      }
+    }
+  });
 
-/* ===============================
-   FLOATING WHATSAPP
-================================ */
-function initFloatingWhatsApp() {
-  if (document.querySelector(".floating-whatsapp")) return;
-
-  const btn = document.createElement("a");
-  btn.href =
-    "https://wa.me/916392930918?text=Hi%20BuildDeploy%20Tech,%20I%20want%20to%20discuss%20my%20project!";
-  btn.target = "_blank";
-  btn.rel = "noopener";
-  btn.className = "floating-whatsapp";
-  btn.setAttribute("aria-label", "Chat on WhatsApp");
-  btn.innerHTML = "💬";
-
-  document.body.appendChild(btn);
+  // Optional: Close menu when clicking any nav link (good UX)
+  if (navMenu) {
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+      });
+    });
+  }
 }
 
 /* ===============================
-   WHATSAPP CLICK TRACKING (GA4)
+   HEADER SCROLL EFFECT
 ================================ */
-document.addEventListener("click", function (e) {
-  const link = e.target.closest("a");
-  if (!link || !link.href) return;
+function initHeaderScrollEffect() {
+  const header = document.querySelector(".site-header");
+  
+  if (!header) return;
 
-  if (link.href.includes("wa.me")) {
-    if (typeof gtag === "function") {
-      gtag("event", "whatsapp_click", {
-        event_category: "engagement",
-        event_label: link.href,
-        transport_type: "beacon"
-      });
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 80) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
     }
-  }
-});
+
+    lastScroll = currentScroll;
+  });
+}
 
 /* ===============================
-   CONTACT CTA TRACKING (GA4)
+   FLOATING WHATSAPP BUTTON
 ================================ */
-document.addEventListener("click", function (e) {
-  const el = e.target.closest("a, button");
-  if (!el) return;
+function initFloatingWhatsApp() {
+  // Agar already exist karta hai toh skip
+  if (document.querySelector(".floating-whatsapp")) return;
 
-  const text = (el.innerText || "").toLowerCase();
-  const href = el.getAttribute("href") || "";
+  const waBtn = document.createElement("a");
+  waBtn.href = "https://wa.me/916392930918?text=Hi%20BuildDeploy%20Tech,%20I%20want%20to%20discuss%20my%20project!";
+  waBtn.target = "_blank";
+  waBtn.rel = "noopener noreferrer";
+  waBtn.className = "floating-whatsapp";
+  waBtn.setAttribute("aria-label", "Chat on WhatsApp");
+  waBtn.innerHTML = `<i class="fab fa-whatsapp"></i>`;
 
-  // Email click
-  if (href.startsWith("mailto:")) {
-    if (typeof gtag === "function") {
-      gtag("event", "contact_click", {
-        event_category: "engagement",
-        event_label: "email_click",
-        transport_type: "beacon"
-      });
+  document.body.appendChild(waBtn);
+}
+
+/* ===============================
+   GA4 EVENT TRACKING
+================================ */
+function initTracking() {
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+
+    if (!link || !link.href) return;
+
+    // WhatsApp Click Tracking
+    if (link.href.includes("wa.me")) {
+      if (typeof gtag === "function") {
+        gtag("event", "whatsapp_click", {
+          event_category: "engagement",
+          event_label: "whatsapp_button",
+          transport_type: "beacon"
+        });
+      }
     }
-    return;
+
+    // Contact / Quote Click Tracking
+    const text = (link.innerText || "").toLowerCase().trim();
+    const href = link.getAttribute("href") || "";
+
+    if (
+      href.includes("contact.html") ||
+      text.includes("contact") ||
+      text.includes("quote") ||
+      text.includes("consultation") ||
+      text.includes("get started")
+    ) {
+      if (typeof gtag === "function") {
+        gtag("event", "contact_click", {
+          event_category: "conversion",
+          event_label: href || text,
+          transport_type: "beacon"
+        });
+      }
+    }
+  });
+}
+
+/* ===============================
+   OPTIONAL: Dropdown Click Support for Mobile
+   (Agar future mein chahiye toh use kar sakte ho)
+================================ */
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  if (dropdown) {
+    dropdown.classList.toggle("mobile-open");
   }
+}
 
-  // Contact CTA
-  if (
-    href.includes("contact.html") ||
-    text.includes("contact") ||
-    text.includes("get in touch") ||
-    text.includes("free consultation")
-  ) {
-    if (typeof gtag === "function") {
-      gtag("event", "contact_click", {
-        event_category: "engagement",
-        event_label: href || text,
-        transport_type: "beacon"
-      });
-    }
+// Keyboard accessibility (Escape key to close mobile menu)
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const navMenu = document.getElementById("nav-menu");
+    if (navMenu) navMenu.classList.remove("open");
   }
 });
