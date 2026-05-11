@@ -2,8 +2,9 @@
    BuildDeploy Tech – Main JS (FINAL CLEAN & OPTIMIZED VERSION)
    ===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadHeaderAndFooter();
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadHeaderAndFooter();
+
   initScrollAnimations();
   initMobileMenu();
   initFloatingWhatsApp();
@@ -14,22 +15,22 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ===============================
    LOAD HEADER & FOOTER
 ================================ */
-function loadHeaderAndFooter() {
+async function loadHeaderAndFooter() {
   const headerEl = document.getElementById("header-placeholder");
   const footerEl = document.getElementById("footer-placeholder");
 
-  if (headerEl) {
-    fetch("/includes/header.html")
-      .then(res => res.text())
-      .then(data => { headerEl.innerHTML = data; })
-      .catch(err => console.error("Error loading header:", err));
-  }
+  try {
+    if (headerEl) {
+      const headerRes = await fetch("/includes/header.html");
+      headerEl.innerHTML = await headerRes.text();
+    }
 
-  if (footerEl) {
-    fetch("/includes/footer.html")
-      .then(res => res.text())
-      .then(data => { footerEl.innerHTML = data; })
-      .catch(err => console.error("Error loading footer:", err));
+    if (footerEl) {
+      const footerRes = await fetch("/includes/footer.html");
+      footerEl.innerHTML = await footerRes.text();
+    }
+  } catch (err) {
+    console.error("Error loading header/footer:", err);
   }
 }
 
@@ -38,7 +39,7 @@ function loadHeaderAndFooter() {
 ================================ */
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll(".animate-fade-up");
-  
+
   if (!animatedElements.length) return;
 
   const observer = new IntersectionObserver((entries) => {
@@ -48,15 +49,14 @@ function initScrollAnimations() {
         observer.unobserve(entry.target);
       }
     });
-  }, { 
+  }, {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px"
   });
 
   animatedElements.forEach(el => observer.observe(el));
 
-  // 🔥 FALLBACK (IMPORTANT FIX)
-  // Agar kisi reason se animation trigger nahi hota
+  // 🔥 FALLBACK FIX
   setTimeout(() => {
     animatedElements.forEach(el => {
       if (!el.classList.contains("visible")) {
@@ -80,6 +80,7 @@ function initMobileMenu() {
     });
   }
 
+  // Close menu when clicking outside
   document.addEventListener("click", (e) => {
     if (navMenu && navMenu.classList.contains("open")) {
       if (!navMenu.contains(e.target) && e.target !== menuToggle) {
@@ -88,6 +89,7 @@ function initMobileMenu() {
     }
   });
 
+  // Close menu on link click
   if (navMenu) {
     navMenu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
@@ -102,7 +104,7 @@ function initMobileMenu() {
 ================================ */
 function initHeaderScrollEffect() {
   const header = document.querySelector(".site-header");
-  
+
   if (!header) return;
 
   window.addEventListener("scroll", () => {
@@ -121,11 +123,15 @@ function initFloatingWhatsApp() {
   if (document.querySelector(".floating-whatsapp")) return;
 
   const waBtn = document.createElement("a");
-  waBtn.href = "https://wa.me/916392930918?text=Hi%20BuildDeploy%20Tech,%20I%20want%20to%20discuss%20my%20project!";
+
+  waBtn.href =
+    "https://wa.me/916392930918?text=Hi%20BuildDeploy%20Tech,%20I%20want%20to%20discuss%20my%20project!";
+
   waBtn.target = "_blank";
   waBtn.rel = "noopener noreferrer";
   waBtn.className = "floating-whatsapp";
   waBtn.setAttribute("aria-label", "Chat on WhatsApp");
+
   waBtn.innerHTML = `<i class="fab fa-whatsapp"></i>`;
 
   document.body.appendChild(waBtn);
@@ -140,6 +146,7 @@ function initTracking() {
 
     if (!link || !link.href) return;
 
+    // WhatsApp Tracking
     if (link.href.includes("wa.me")) {
       if (typeof gtag === "function") {
         gtag("event", "whatsapp_click", {
@@ -150,6 +157,7 @@ function initTracking() {
       }
     }
 
+    // Contact / Quote Tracking
     const text = (link.innerText || "").toLowerCase().trim();
     const href = link.getAttribute("href") || "";
 
@@ -176,6 +184,7 @@ function initTracking() {
 ================================ */
 function toggleDropdown(dropdownId) {
   const dropdown = document.getElementById(dropdownId);
+
   if (dropdown) {
     dropdown.classList.toggle("mobile-open");
   }
@@ -187,6 +196,9 @@ function toggleDropdown(dropdownId) {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     const navMenu = document.getElementById("nav-menu");
-    if (navMenu) navMenu.classList.remove("open");
+
+    if (navMenu) {
+      navMenu.classList.remove("open");
+    }
   }
 });
